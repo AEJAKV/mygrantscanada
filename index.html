@@ -1345,7 +1345,7 @@ function buildCourseCards(){
   grid.innerHTML = Object.entries(COURSES).map(([k,c]) => `
     <div class="course-card reveal" data-key="${k}" id="card-${k}">
       <div class="cc-top">
-        <span class="cc-grant">Up to ${fmt(c.baseGrant)} grant</span>
+        <span class="cc-grant">${fmt(c.baseGrant)}+ grant</span>
         <span class="cc-selected-tag">Selected</span>
       </div>
       <h3>${c.name}</h3>
