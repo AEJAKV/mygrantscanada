@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MyGrantsCanada.com — See Your Grant Funds Fast</title>
-<meta name="description" content="Estimate your potential education grant or rebate. $3,000 per child potential rebate, financing may start from $149/month. Study from anywhere in Canada.">
+<meta name="description" content="Estimate your potential education grant. $3,000 per child potential grant, financing may start from $149/month. Study from anywhere in Canada.">
 <style>
 :root{
   --navy:#12355B;
@@ -624,7 +624,7 @@ section{padding:72px 0 0}
                     <div class="step-value" id="childCount" aria-live="polite">0</div>
                     <button class="step-btn" id="childPlus" aria-label="Increase number of children" type="button">+</button>
                   </div>
-                  <p class="stepper-note">Each child may add <strong>$3,000</strong> to your potential rebate.</p>
+                  <p class="stepper-note">Each child may add <strong>$3,000</strong> to your potential grant.</p>
                   <p class="estimator-fine-note"><strong>Live classes are available on:</strong> Calgary/Edmonton/Alberta / Saskatchewan / Manitoba / Ontario</p>
                 </div>
               </div>
@@ -640,7 +640,7 @@ section{padding:72px 0 0}
                     <span class="val green" id="sumBase">$0</span>
                   </div>
                   <div class="summary-row">
-                    <span class="lbl" id="sumChildLbl">Child rebate (0 × $3,000)</span>
+                    <span class="lbl" id="sumChildLbl">Child grant (0 × $3,000)</span>
                     <span class="val green" id="sumChild">$0</span>
                   </div>
                 </div>
@@ -672,7 +672,7 @@ section{padding:72px 0 0}
         <!-- Hero image -->
         <div class="hero-figure">
           <div class="glow"></div>
-          <div class="float-chip c1"><span class="big">$3,000</span> per child potential rebate</div>
+          <div class="float-chip c1"><span class="big">$3,000</span> per child potential grant</div>
           <div class="float-chip c2">From <span class="big">$149</span>/month</div>
           <img src="img%20assets/grant-canada-hero-img.png" alt="Happy student holding books"
                onerror="this.onerror=null;this.outerHTML='&lt;div style=&quot;width:100%;max-width:420px;height:420px;border-radius:24px;border:2px dashed rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:48px&quot;&gt;Student Image Placeholder&lt;/div&gt;'">
@@ -722,7 +722,7 @@ section{padding:72px 0 0}
       </div>
       <div class="step-card reveal">
         <div class="step-num">2</div>
-        <h3>Estimate your potential rebate</h3>
+        <h3>Estimate your potential grant</h3>
         <p>Use the live estimator to see your base program grant plus $3,000 per child you may qualify for.</p>
       </div>
       <div class="step-card reveal">
@@ -740,7 +740,7 @@ section{padding:72px 0 0}
     <div class="sec-head reveal">
       <span class="sec-kicker">Featured programs</span>
       <h2>Featured Courses</h2>
-      <p>Every program is designed for online study and may include grant or rebate options for eligible students.</p>
+      <p>Every program is designed for online study and may include grant options for eligible students.</p>
     </div>
     <div class="courses-grid" id="coursesGrid"></div>
   </div>
@@ -753,7 +753,7 @@ section{padding:72px 0 0}
       <div class="elig-ico"><svg style="color:var(--gold)"><use href="#shield"/></svg></div>
       <div>
         <h2>Who May Qualify?</h2>
-        <p>You may be eligible for grant or rebate options if you have not taken the same or a similar course within the past two years. Final eligibility may depend on program selection, approval, and student details.</p>
+        <p>You may be eligible for grant options if you have not taken the same or a similar course within the past two years. Final eligibility may depend on program selection, approval, and student details.</p>
       </div>
     </div>
   </div>
@@ -829,11 +829,11 @@ section{padding:72px 0 0}
               <span class="val green" id="csBase">$0</span>
             </div>
             <div class="summary-row">
-              <span class="lbl" id="csChildLbl">Child rebate</span>
+              <span class="lbl" id="csChildLbl">Child grant</span>
               <span class="val green" id="csChild">$0</span>
             </div>
             <div class="summary-row">
-              <span class="lbl">Estimated potential rebate</span>
+              <span class="lbl">Estimated potential grant</span>
               <span class="val" id="csTotal" style="color:var(--gold);font-size:1.15rem">$0</span>
             </div>
             <div class="summary-row">
@@ -861,7 +861,7 @@ section{padding:72px 0 0}
     <div class="sec-head reveal">
       <span class="sec-kicker">Questions</span>
       <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know about grants, rebates, and study time.</p>
+      <p>Everything you need to know about grants and study time.</p>
     </div>
     <div class="faq-list" id="faqList"></div>
   </div>
@@ -886,7 +886,7 @@ section{padding:72px 0 0}
       </div>
     </div>
     <p class="footer-disclaimer">
-      This is an estimate only. Final rebate, grant, financing, and eligibility details may vary based on program selection, approval, prior course history, and student information.
+      This is an estimate only. Final grant, financing, and eligibility details may vary based on program selection, approval, prior course history, and student information.
     </p>
     <p class="footer-copy">© 2026 MyGrantsCanada.com — All rights reserved.</p>
   </div>
@@ -926,7 +926,7 @@ section{padding:72px 0 0}
 <div class="mobile-cta" id="mobileCta">
   <div class="mc-info">
     <div class="a" id="mcAmount">$0</div>
-    <div class="b">Potential rebate · From $149/month</div>
+    <div class="b">Potential grant · From $149/month</div>
   </div>
   <button class="mc-btn" onclick="scrollToCheckout()">Check My Grant</button>
 </div>
@@ -1379,7 +1379,7 @@ function render(){
   /* hero estimator */
   document.getElementById("sumCourse").textContent = r.course.name;
   document.getElementById("sumBase").textContent = fmt(r.base);
-  document.getElementById("sumChildLbl").textContent = `Child rebate (${state.children} × $3,000)`;
+  document.getElementById("sumChildLbl").textContent = `Child grant (${state.children} × $3,000)`;
   document.getElementById("sumChild").textContent = fmt(r.childTotal);
   const totalEl = document.getElementById("sumTotal");
   totalEl.textContent = fmt(r.total);
@@ -1406,7 +1406,7 @@ function render(){
   /* checkout summary */
   document.getElementById("csCourse").textContent = r.course.name;
   document.getElementById("csBase").textContent = fmt(r.base);
-  document.getElementById("csChildLbl").textContent = `Child rebate (${state.children} × $3,000)`;
+  document.getElementById("csChildLbl").textContent = `Child grant (${state.children} × $3,000)`;
   document.getElementById("csChild").textContent = fmt(r.childTotal);
   document.getElementById("csTotal").textContent = fmt(r.total);
 
@@ -1493,8 +1493,8 @@ const FAQS = [
    "Yes, the program is designed for online study from anywhere in Canada, depending on the selected course."],
   ["How much time do I need each week?",
    "The program is designed around approximately 1 hour per day, 5 days per week."],
-  ["Is the rebate guaranteed?",
-   "Eligibility may be available if you have not taken the same or a similar course within the past two years. Final grant or rebate details may depend on approval, program selection, and student information."]
+  ["Is the grant guaranteed?",
+   "Eligibility may be available if you have not taken the same or a similar course within the past two years. Final grant details may depend on approval, program selection, and student information."]
 ];
 
 function buildFaq(){
