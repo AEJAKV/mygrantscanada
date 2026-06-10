@@ -436,6 +436,8 @@ section{padding:72px 0 0}
   transition:all .18s ease;
 }
 .m-file-link:hover{background:rgba(24,160,88,.16);box-shadow:0 8px 20px rgba(24,160,88,.18)}
+.m-file-link.is-disabled,
+.m-file-link:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;box-shadow:none}
 .modal-actions{display:flex;gap:12px}
 .m-use{
   flex:1;background:var(--green);color:#fff;border:none;font-weight:800;font-size:.95rem;
@@ -981,31 +983,281 @@ const COURSES = {
     name: "Business Administration",
     monthlyPayment: 149,
     baseGrant: 4000,
-    description: "Develop business, communication, office, and administrative skills for a wide range of professional roles."
+    description: "Develop business, communication, office, and administrative skills for a wide range of professional roles.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy">There are 14 modules in the 54-week Business Administration Diploma. This popup includes the first four modules from the curriculum outline.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">1. Business Communication</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks (80 hours)</p>
+        <p class="m-curriculum-copy">Covers written and verbal business communication in professional settings, including business writing, letters, memos, summaries, persuasive writing, and oral presentations.</p>
+        <p class="m-curriculum-copy"><strong>Textbook:</strong> <em>Look: Looking Out, Looking In</em> by Ronald B. Adler, Judith A. Rolls, and Russell F. Proctor.</p>
+        <ul class="m-curriculum-list">
+          <li>Effective business writing and professional communications</li>
+          <li>Research approaches and information collection</li>
+          <li>Presentation delivery and interpersonal communication skills</li>
+          <li>Team effectiveness, time management, and problem solving</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">2. Business Mathematics</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 2 weeks (40 hours)</p>
+        <p class="m-curriculum-copy">Reviews practical business math including ratios, percentages, proportions, marketing math, simple and compound interest, annuities, loans, and mortgages.</p>
+        <ul class="m-curriculum-list">
+          <li>Analyze and calculate interest, annuities, payroll preparation, pricing, invoice preparation, discounts, taxes, and depreciation</li>
+          <li>Use business math terminology and explain business math concepts in real-world situations</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">3. Income Taxes</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks (80 hours)</p>
+        <p class="m-curriculum-copy">Introduces the Income Tax Act and the taxation of salaries, business income, office and employment income, property, capital gains and losses, deductions, and the calculation of taxable income for individuals.</p>
+        <ul class="m-curriculum-list">
+          <li>Describe the Canadian income taxation system and administrative procedures</li>
+          <li>Explain employment income, capital cost allowance, and business versus net income</li>
+          <li>Discuss property income, capital gains, losses, and major income sources under the Income Tax Act</li>
+          <li>Calculate taxable income and taxes payable for an individual residing in Canada</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">4. Organizational Behavior</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks (80 hours)</p>
+        <p class="m-curriculum-copy">Explores organizational behavior and learning, motivation and reward systems, group dynamics, team building, decision making, conflict resolution, organizational change, and organizational structure and design.</p>
+        <p class="m-curriculum-copy"><strong>Textbook:</strong> <em>Organizational Behavior</em> by Nancy Langton and Stephen Robbins.</p>
+        <ul class="m-curriculum-list">
+          <li>Explain the development of organizational behavior from micro and macro perspectives</li>
+          <li>Compare models of individual behavior related to motivation and rewards</li>
+          <li>Identify communication and conflict-resolution processes used in organizations</li>
+          <li>Demonstrate group dynamics, team building, leadership, and decision-making concepts</li>
+          <li>Explain organizational culture, design dimensions, and the implementation of organizational change</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Business-Administration-Dimploma-pdf.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   },
   "community-support-worker": {
     name: "Community Support Worker",
     monthlyPayment: 149,
     baseGrant: 4000,
-    description: "Prepare for meaningful work supporting individuals, families, and communities through care-focused service skills."
+    description: "Prepare for meaningful work supporting individuals, families, and communities through care-focused service skills.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Community Support Worker Diploma</strong></p>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> In-class 940 hours at 20 hours per week, plus 120 practicum hours at 30 hours per week.</p>
+        <p class="m-curriculum-copy"><strong>Total length:</strong> 53 weeks</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Core Curriculum</div>
+        <ul class="m-curriculum-list">
+          <li><strong>MS Office Applications - 80 hours:</strong> Word, Excel, and PowerPoint functions, file management, editing, formatting, printing, and general Windows application skills.</li>
+          <li><strong>Introduction to Human Services - 40 hours:</strong> Social programs, services, and effective social work practices within well-defined populations.</li>
+          <li><strong>Lifespan Development - 80 hours:</strong> Developmental changes in children and adolescents, including social, cultural, and environmental influences.</li>
+          <li><strong>Children and Youth at Risk - 80 hours:</strong> Foundational support strategies for children and youth facing specific social challenges.</li>
+          <li><strong>Understanding Addictions - 40 hours:</strong> Substance abuse, counselling, treatment settings, treatment planning, and continuum of care.</li>
+          <li><strong>Indigenous Studies - 40 hours:</strong> Knowledge and skills for supporting Indigenous individuals and families in schools and communities.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Counselling and Support Modules</div>
+        <ul class="m-curriculum-list">
+          <li><strong>Understanding Cultural and Social Differences - 40 hours:</strong> Multicultural counselling competencies and alternative holistic approaches for diverse groups in Canada.</li>
+          <li><strong>Rehabilitation and Care Planning - 80 hours:</strong> Lifespan development from prenatal to elderhood with emphasis on physical, intellectual, social, and emotional growth.</li>
+          <li><strong>Introduction to Pharmacology - 40 hours:</strong> Basic pharmacology related to mental health challenges and substance use.</li>
+          <li><strong>Introduction to Mental Health - 80 hours:</strong> Mental health conditions and supportive approaches for individuals living with mental health issues.</li>
+          <li><strong>Sociology and Family Systems Theory - 80 hours:</strong> Family counselling systems theory and major counselling models.</li>
+          <li><strong>Communication Skills for Counselling, Recording and Reporting - 40 hours:</strong> Personal and interpersonal communication skills for counselling settings.</li>
+          <li><strong>Counselling Theories - 40 hours:</strong> Historical, modern, and multicultural counselling theory foundations.</li>
+          <li><strong>Group Counselling - 40 hours:</strong> Group facilitation, participation strategies, and client interviewing techniques.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Wellness, Career, and Practicum</div>
+        <ul class="m-curriculum-list">
+          <li><strong>Gerontology and End of Life Care - 40 hours:</strong> Aging, psychosocial applications of growing older, and emotional and physical support at end of life.</li>
+          <li><strong>Self-Care and Mentoring of Life-skills - 80 hours:</strong> Stress reduction, wellness strategies, and support for clients' daily living independence.</li>
+          <li><strong>Resume Writing, Interview Preparation and Career Planning - 20 hours:</strong> Job search, interviewing, and career management strategies.</li>
+          <li><strong>Practicum - 120 hours:</strong> Applied field experience to support real-world readiness.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Community-Support-Worker-Curriculum-pdf.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   },
   "education-assistant": {
     name: "Education Assistant",
     monthlyPayment: 149,
     baseGrant: 4000,
-    description: "Train to support teachers and students in classroom environments, including learning assistance and student support."
+    description: "Train to support teachers and students in classroom environments, including learning assistance and student support.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Education Assistant Curriculum</strong></p>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 54 weeks</p>
+        <p class="m-curriculum-copy">This diploma includes 19 modules for a total of 1,080 hours, including an on-the-job practicum.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Curriculum Modules</div>
+        <ul class="m-curriculum-list">
+          <li><strong>1. MS Office:</strong> 80 hours</li>
+          <li><strong>2. English for Academic Purpose:</strong> 80 hours</li>
+          <li><strong>3. Inclusive Education:</strong> 40 hours</li>
+          <li><strong>4. Education Assistant Roles and Responsibilities:</strong> 20 hours</li>
+          <li><strong>5. Communication Skills:</strong> 40 hours</li>
+          <li><strong>6. Portfolio Development:</strong> 40 hours</li>
+          <li><strong>7. Characteristics of Learners:</strong> 40 hours</li>
+          <li><strong>8. Therapeutic Crises Intervention (TCI):</strong> 40 hours</li>
+          <li><strong>9. Lifespan Development:</strong> 80 hours</li>
+          <li><strong>10. Observation and Documentation:</strong> 40 hours</li>
+          <li><strong>11. Positive Behaviour Supports:</strong> 80 hours</li>
+          <li><strong>12. Supportive Learning Environment:</strong> 40 hours</li>
+          <li><strong>13. Professionalism:</strong> 20 hours</li>
+          <li><strong>14. Instructional Technology:</strong> 40 hours</li>
+          <li><strong>15. Students with Exceptionalities 1&amp;2:</strong> 80 hours</li>
+          <li><strong>16. Introduction to Early Childhood Education:</strong> 80 hours</li>
+          <li><strong>17. Communication, Attitudes, Social and Life Skills:</strong> 40 hours</li>
+          <li><strong>18. Developing Through Play:</strong> 80 hours</li>
+          <li><strong>19. On Job Training (Practicum):</strong> 120 hours</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Education-Assistant-Diploma-Curriculum.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   },
   "hospitality-business-management": {
     name: "Hospitality Business Management",
     monthlyPayment: 149,
     baseGrant: 1000,
-    description: "Learn service, operations, guest relations, and business skills for hospitality and customer-focused environments."
+    description: "Learn service, operations, guest relations, and business skills for hospitality and customer-focused environments.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Diploma in Hospitality Business Management</strong></p>
+        <p class="m-curriculum-copy"><strong>Total length:</strong> 54 weeks total, including 49 weeks in class and 5 weeks practicum.</p>
+        <p class="m-curriculum-copy"><strong>Total hours:</strong> 1,080 hours</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Courses</div>
+        <ul class="m-curriculum-list">
+          <li><strong>1. Introduction to Microsoft Office:</strong> 3 weeks, 60 hours</li>
+          <li><strong>2. Introduction to Hospitality Career and Employment:</strong> 2 weeks, 40 hours</li>
+          <li><strong>3. Introduction to Tourism:</strong> 2 weeks, 40 hours</li>
+          <li><strong>4. Canadian Hospitality Law:</strong> 2 weeks, 40 hours</li>
+          <li><strong>5. Food and Beverage Service:</strong> 1 week, 20 hours</li>
+          <li><strong>6. Hygiene and Food Safety / Occupational Health and Safety:</strong> 1 week, 20 hours</li>
+          <li><strong>7. Business Communication:</strong> 1 week, 20 hours</li>
+          <li><strong>8. Basic Hotel and Restaurant Accounting:</strong> 2 weeks, 40 hours</li>
+          <li><strong>9. Managing Front Office Operations:</strong> 6 weeks, 120 hours</li>
+          <li><strong>10. Managing Housekeeping Operations:</strong> 3 weeks, 60 hours</li>
+          <li><strong>11. Design and Management of Hospitality Facilities:</strong> 1 week, 20 hours</li>
+          <li><strong>12. Special Events and Convention Management I:</strong> 2 weeks, 40 hours</li>
+          <li><strong>13. Special Events and Convention Management II:</strong> 2 weeks, 40 hours</li>
+          <li><strong>14. Food, Beverage and Labor Cost Control:</strong> 4 weeks, 80 hours</li>
+          <li><strong>15. Human Resources Management for Hospitality Business:</strong> 2 weeks, 40 hours</li>
+          <li><strong>16. Sales and Marketing:</strong> 3 weeks, 60 hours</li>
+          <li><strong>17. Revenue Management:</strong> 6 weeks, 120 hours</li>
+          <li><strong>18. Security and Loss Prevention:</strong> 1 week, 20 hours</li>
+          <li><strong>19. Entrepreneurship:</strong> 2 weeks, 40 hours</li>
+          <li><strong>20. Organizational Behavior in Tourism and Hospitality Industry:</strong> 2 weeks, 40 hours</li>
+          <li><strong>21. CPR / First Aid and WHMIS:</strong> 1 week, 20 hours</li>
+          <li><strong>22. Practicum:</strong> 5 weeks, 100 hours</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Canadian Hospitality Law Topics</div>
+        <ul class="m-curriculum-list">
+          <li>Canadian law</li>
+          <li>Impact of legislation on the hospitality industry</li>
+          <li>Legal responsibilities in the hospitality industry</li>
+          <li>Contract law</li>
+          <li>Business structures</li>
+          <li>Insurance</li>
+          <li>Risk management</li>
+          <li>Human rights legislation</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Shared Microsoft Office Curriculum</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks</p>
+        <p class="m-curriculum-copy"><strong>Course description:</strong> Covers the core features of Word, Excel, Access, and PowerPoint, plus Windows application skills, projects, assignments, and typing practice.</p>
+        <ul class="m-curriculum-list">
+          <li>Chapter 1: MS Word</li>
+          <li>Chapter 2: MS Excel</li>
+          <li>Chapter 3: MS Access</li>
+          <li>Chapter 4: MS PowerPoint</li>
+          <li>Keyboarding practice targets at least 40 words per minute</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Assessment and Textbook</div>
+        <div class="m-score-grid">
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Participation and attendance</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Keyboarding pre-assessment and post-assessment</div></div>
+          <div class="m-score-item"><div class="w">35%</div><div class="d">Four quizzes with 20 multiple choice questions from each program</div></div>
+          <div class="m-score-item"><div class="w">20%</div><div class="d">At least one assignment for each program</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">PowerPoint presentation on a course related topic at the end of the MS Office course</div></div>
+        </div>
+        <p class="m-curriculum-copy"><strong>Textbook:</strong> Chaney Adkins, Hains, Hawkinds and Murre Wolf. <em>Skill of Success with Microsoft Office 2016.</em> USA: Pearson, 2017. ISBN: 10-987-654321.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Hospitality-Business-Management-Diploma.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   },
   "medical-office-assistant": {
     name: "Medical Office Assistant",
     monthlyPayment: 149,
     baseGrant: 3000,
-    description: "Prepare for administrative roles in clinics, medical offices, and healthcare support settings."
+    description: "Prepare for administrative roles in clinics, medical offices, and healthcare support settings.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Medical Office Assistant Diploma Curriculum</strong></p>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 54 weeks</p>
+        <p class="m-curriculum-copy">This program includes 16 diploma modules that prepare students for medical office administration, clinical support, records, communication, and practicum readiness.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Diploma Modules</div>
+        <ul class="m-curriculum-list">
+          <li><strong>MOA001:</strong> Computer Applications Program</li>
+          <li><strong>MOA002:</strong> Basic Anatomy and Physiology</li>
+          <li><strong>MOA003:</strong> Medical Terminology - 1</li>
+          <li><strong>MOA004:</strong> Medical Terminology - 2</li>
+          <li><strong>MOA005:</strong> Medical Transcription</li>
+          <li><strong>MOA006:</strong> Standard Health and Safety in Health Care</li>
+          <li><strong>MOA007:</strong> Introduction to Human Relations</li>
+          <li><strong>MOA008:</strong> MOA’s Role in Canadian Health Care System</li>
+          <li><strong>MOA009:</strong> Medical Office Administration Skills</li>
+          <li><strong>MOA010:</strong> Medical Office Clinical Skills</li>
+          <li><strong>MOA011:</strong> Fundamentals of Unit Clerk</li>
+          <li><strong>MOA012:</strong> Communication Techniques and Scheduling</li>
+          <li><strong>MOA013:</strong> Electronic Medical Records (Practicing Health Care Software)</li>
+          <li><strong>MOA014:</strong> Standard First Aid &amp; CPR</li>
+          <li><strong>MOA015:</strong> Job Search, Resume Preparation, Interview Skills and Academic Review</li>
+          <li><strong>MOA016:</strong> Practicum (pre-requisite: completion of in-class and lab courses, First Aid &amp; CPR, and police clearance and immunization)</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Contact</div>
+        <p class="m-curriculum-copy">Cherrylyn Tan - Senior Marketing Manager</p>
+        <p class="m-curriculum-copy">780-242-0323</p>
+        <p class="m-curriculum-copy">cherrylyntan.0323@gmail.com / gelgel03@gmail.com</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Medical-Office-Assistant-Diploma.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   },
   "office-administration": {
     name: "Office Administration",
@@ -1017,7 +1269,38 @@ const COURSES = {
     name: "Massage Therapy",
     monthlyPayment: 149,
     baseGrant: 4000,
-    description: "A blended online and in-person program designed for students pursuing massage therapy training."
+    description: "A blended online and in-person program designed for students pursuing massage therapy training.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Year 1 Overview</div>
+        <p class="m-curriculum-copy"><strong>Massage Therapy - Year 1</strong></p>
+        <p class="m-curriculum-copy">This section highlights the Year 1 foundational courses in massage therapy, including hands-on practice, theory, sequencing, and anatomy.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 1: Introduction to Massage Therapy</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 40 hours</p>
+        <p class="m-curriculum-copy">Students learn basic manual massage applications for general relaxation, along with the physiological and psychological effects and benefits of massage therapy. The course also covers patient handling, table setup, draping techniques, palpation, tactile skill development, and the history and modernization of massage therapy.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 2: Massage Theory and Practice</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 60 hours</p>
+        <p class="m-curriculum-copy">Introduces students to the basic concepts of massage therapy and the medical terminology used in documentation and professional communication. Students also learn relevant layman’s terms, the advantages and limits of massage therapy, and apply critical thinking while using massage concepts.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 3: Principles and Sequence of Massage</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 40 hours</p>
+        <p class="m-curriculum-copy">Students learn how to synchronize rhythm and pressure in ways that are more relaxing and acceptable to the client while building the practical knowledge and skills needed for safe and effective massage sequencing.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 4: Anatomy and Physiology I</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 100 hours</p>
+        <p class="m-curriculum-copy">Provides an introduction to the human body with a brief overview of introductory chemistry, cellular biology, histology, and the fundamental principles of systemic anatomy and physiology as they relate to homeostasis. Students build a working knowledge of basic terminology, concepts, and the structure and function of the body.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="MT-Curriculam.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   }
 };
 
