@@ -132,10 +132,12 @@ input,select{font-family:inherit}
   transform:translateY(-70%) rotate(45deg);pointer-events:none;
 }
 .info-link{
-  background:none;border:none;color:var(--hero-1);font-size:.8rem;font-weight:600;
-  padding:6px 0 0;text-decoration:underline;text-underline-offset:2px;
+  margin:10px auto 0;background:rgba(11,90,137,.08);border:1px solid rgba(11,90,137,.18);
+  color:var(--hero-1);font-size:.82rem;font-weight:800;
+  min-width:220px;width:fit-content;padding:10px 16px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+  gap:8px;text-decoration:none;transition:all .15s ease;
 }
-.info-link:hover{color:var(--navy)}
+.info-link:hover{color:var(--navy);background:rgba(11,90,137,.13);border-color:rgba(11,90,137,.28);transform:translateY(-1px)}
 .stepper{display:flex;align-items:center;gap:10px}
 .step-btn{
   width:46px;height:46px;border-radius:50%;flex:none;
@@ -185,10 +187,16 @@ input,select{font-family:inherit}
 .cta-main{
   width:100%;margin-top:14px;
   background:var(--green);color:#fff;border:none;
-  font-size:1.02rem;font-weight:800;padding:16px 20px;border-radius:999px;
+  font-size:.94rem;font-weight:800;padding:15px 18px;border-radius:999px;
   display:flex;align-items:center;justify-content:center;gap:10px;
+  line-height:1.15;
   transition:all .18s ease;box-shadow:0 10px 24px rgba(24,160,88,.32);
 }
+.cta-main-label{
+  display:inline-flex;align-items:baseline;justify-content:center;gap:.35em;
+  flex-wrap:wrap;text-align:center;
+}
+.cta-main-label #heroCtaAmount{white-space:nowrap}
 .cta-main:hover{background:#13854a;transform:translateY(-2px);box-shadow:0 14px 30px rgba(24,160,88,.42)}
 .cta-main svg{width:18px;height:18px;transition:transform .18s ease}
 .cta-main:hover svg{transform:translateX(4px)}
@@ -384,8 +392,9 @@ section{padding:72px 0 0}
 }
 .modal-overlay.show{opacity:1;pointer-events:auto}
 .modal{
-  background:#fff;border-radius:var(--radius-lg);max-width:480px;width:100%;
+  background:#fff;border-radius:var(--radius-lg);max-width:680px;width:100%;max-height:min(90vh,860px);
   box-shadow:0 40px 90px rgba(13,29,49,.4);overflow:hidden;
+  display:flex;flex-direction:column;
   transform:translateY(16px) scale(.97);transition:transform .25s ease;
 }
 .modal-overlay.show .modal{transform:translateY(0) scale(1)}
@@ -401,7 +410,7 @@ section{padding:72px 0 0}
   display:flex;align-items:center;justify-content:center;transition:background .15s ease;
 }
 .modal-close:hover{background:rgba(255,255,255,.28)}
-.modal-body{padding:24px 28px 28px}
+.modal-body{padding:24px 28px 28px;overflow:auto}
 .modal-body .m-desc{font-size:.93rem;color:var(--muted);margin-bottom:18px}
 .m-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
 .m-stat{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:14px 16px}
@@ -409,6 +418,24 @@ section{padding:72px 0 0}
 .m-stat .v{font-size:1.2rem;font-weight:800;color:var(--navy);margin-top:3px}
 .m-stat.grant .v{color:var(--green)}
 .m-note{font-size:.76rem;color:var(--muted);background:var(--bg-soft);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:20px}
+.m-curriculum{display:grid;gap:14px;margin-bottom:20px}
+.m-curriculum-block{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:16px 18px;background:#fff}
+.m-curriculum-title{font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.m-curriculum-copy{font-size:.9rem;color:var(--charcoal);margin-bottom:8px}
+.m-curriculum-copy:last-child{margin-bottom:0}
+.m-curriculum-list{margin:0;padding-left:18px;color:var(--charcoal);display:grid;gap:7px;font-size:.9rem}
+.m-curriculum-list li strong{color:var(--navy)}
+.m-score-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.m-score-item{border:1px solid var(--border);border-radius:12px;padding:10px 12px;background:var(--bg-soft)}
+.m-score-item .w{font-size:.78rem;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.m-score-item .d{font-size:.85rem;color:var(--charcoal)}
+.m-file-link{
+  display:inline-flex;align-items:center;justify-content:center;margin-top:2px;
+  background:rgba(24,160,88,.1);border:1px solid rgba(24,160,88,.22);color:var(--green);
+  font-size:.9rem;font-weight:800;padding:12px 16px;border-radius:999px;text-decoration:none;
+  transition:all .18s ease;
+}
+.m-file-link:hover{background:rgba(24,160,88,.16);box-shadow:0 8px 20px rgba(24,160,88,.18)}
 .modal-actions{display:flex;gap:12px}
 .m-use{
   flex:1;background:var(--green);color:#fff;border:none;font-weight:800;font-size:.95rem;
@@ -545,9 +572,9 @@ section{padding:72px 0 0}
       <div class="hero-head">
         <div class="hero-badge">
           <svg class="leaf" style="color:var(--gold)"><use href="#maple"/></svg>
-          Education funding estimates for Canadians
+          Get Up to $15,000 in Grants Fast to Help With Your Education
         </div>
-        <h1>See Your <span class="gold">Grant Funds Fast</span></h1>
+        <h1>Get Grants Fast with <span class="gold">Dipolma &amp; Certificate Programs in Canada</span></h1>
         <p class="hero-sub">Start preparing for your new career in 30 days or less</p>
       </div>
 
@@ -574,7 +601,9 @@ section{padding:72px 0 0}
                   <div class="select-wrap">
                     <select id="courseSelect" aria-label="Choose your program"></select>
                   </div>
-                  <button class="info-link" type="button" onclick="openModal(state.courseKey)">View program details</button>
+                  <button class="info-link" type="button" onclick="openModal(state.courseKey)">
+                    <span>View Curriculum Vitae</span>
+                  </button>
                 </div>
                 <div>
                   <label class="field-label" id="childrenLabel">How many children do you have?</label>
@@ -617,7 +646,7 @@ section{padding:72px 0 0}
                 </div>
 
                 <button class="cta-main" type="button" onclick="scrollToCheckout()">
-                  Check My Potential Grant
+                  <span class="cta-main-label">Apply for my <span id="heroCtaAmount">$0</span> Grant</span>
                   <svg><use href="#arrow-r"/></svg>
                 </button>
                 <p class="cta-fine">No obligation. See what you may qualify for in under a minute.</p>
@@ -876,6 +905,7 @@ section{padding:72px 0 0}
         </div>
       </div>
       <div class="m-note">Grant amounts are estimates. You may qualify if you have not taken the same or a similar course within the past two years.</div>
+      <div class="m-curriculum" id="modalCurriculum" hidden></div>
       <div class="modal-actions">
         <button class="m-use" type="button" id="modalUseBtn">Use This Course</button>
         <button class="m-close2" type="button" onclick="closeModal()">Close</button>
@@ -900,7 +930,52 @@ const COURSES = {
     name: "Accounting",
     monthlyPayment: 149,
     baseGrant: 4000,
-    description: "Build practical skills in bookkeeping, financial records, payroll basics, and business accounting support."
+    description: "Build practical skills in bookkeeping, financial records, payroll basics, and business accounting support.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course Outline</div>
+        <ul class="m-curriculum-list">
+          <li><strong>Module 1:</strong> Microsoft Office and Alpha-Numeric Typing</li>
+          <li><strong>Module 2:</strong> Financial Accounting (Service Related Company)</li>
+          <li><strong>Module 3:</strong> Financial Accounting (Merchandizing Company)</li>
+          <li><strong>Module 4:</strong> Cost/Management Accounting</li>
+          <li><strong>Module 5:</strong> Income Tax Return</li>
+          <li><strong>Module 6:</strong> In-house practicum simulation and computerized accounting, including full cycle accounting, Sage 50, and QuickBooks</li>
+          <li><strong>Module 7:</strong> Payroll Compliance Practitioner (PCP) requirements</li>
+          <li><strong>Module 8:</strong> Introduction to Accounting with East West transcript credit consideration</li>
+          <li><strong>Module 9:</strong> Payroll Compliance Legislation (PCL)</li>
+          <li><strong>Module 10:</strong> Payroll Fundamentals 1 (PF1)</li>
+          <li><strong>Module 11:</strong> Payroll Fundamentals 2 (PF2)</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Microsoft Office Curriculum</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks</p>
+        <p class="m-curriculum-copy"><strong>Required for:</strong> Office Administration, Accounting and Payroll, Medical Office Assistant, and Education Assistant.</p>
+        <ul class="m-curriculum-list">
+          <li>Chapter 1: MS Word</li>
+          <li>Chapter 2: MS Excel</li>
+          <li>Chapter 3: MS Access</li>
+          <li>Chapter 4: MS PowerPoint</li>
+          <li>Keyboarding practice targets at least 40 words per minute.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Assessment</div>
+        <div class="m-score-grid">
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Participation and attendance</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Keyboarding pre-assessment and post-assessment</div></div>
+          <div class="m-score-item"><div class="w">35%</div><div class="d">Four quizzes with 20 multiple choice questions from each program</div></div>
+          <div class="m-score-item"><div class="w">20%</div><div class="d">At least one assignment for each program</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">PowerPoint presentation on a course-related topic at the end of the MS Office course</div></div>
+        </div>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Textbook</div>
+        <p class="m-curriculum-copy">Chaney Adkins, Hains, Hawkinds and Murre Wolf. Skill of Success with Microsoft Office 2016. USA: Pearson, 2017. ISBN: 10-987-654321.</p>
+        <a class="m-file-link" href="Accounting-and-Payroll-Administration-Diploma-(MyGrantsCanada).pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
   },
   "business-administration": {
     name: "Business Administration",
@@ -1019,6 +1094,7 @@ function render(){
   document.getElementById("sumChild").textContent = fmt(r.childTotal);
   const totalEl = document.getElementById("sumTotal");
   totalEl.textContent = fmt(r.total);
+  document.getElementById("heroCtaAmount").textContent = fmt(r.total);
   if(lastTotal !== null && lastTotal !== r.total){
     totalEl.classList.remove("bump"); void totalEl.offsetWidth; totalEl.classList.add("bump");
   }
@@ -1068,6 +1144,7 @@ childPlus.addEventListener("click", () => setChildren(state.children + 1));
 
 /* ================= Modal ================= */
 const overlay = document.getElementById("modalOverlay");
+const modalCurriculum = document.getElementById("modalCurriculum");
 let modalKey = null;
 
 function openModal(key){
@@ -1077,12 +1154,21 @@ function openModal(key){
   document.getElementById("modalTitle").textContent = c.name;
   document.getElementById("modalDesc").textContent = c.description;
   document.getElementById("modalGrant").textContent = fmt(c.baseGrant);
+  if(c.curriculumHtml){
+    modalCurriculum.innerHTML = c.curriculumHtml;
+    modalCurriculum.hidden = false;
+  } else {
+    modalCurriculum.innerHTML = "";
+    modalCurriculum.hidden = true;
+  }
   overlay.classList.add("show");
   document.body.style.overflow = "hidden";
 }
 function closeModal(){
   overlay.classList.remove("show");
   document.body.style.overflow = "";
+  modalCurriculum.innerHTML = "";
+  modalCurriculum.hidden = true;
   modalKey = null;
 }
 overlay.addEventListener("click", e => { if(e.target === overlay) closeModal(); });
