@@ -624,7 +624,7 @@ section{padding:72px 0 0}
                     <button class="step-btn" id="childPlus" aria-label="Increase number of children" type="button">+</button>
                   </div>
                   <p class="stepper-note">Each child may add <strong>$3,000</strong> to your potential grant.</p>
-                  <p class="estimator-fine-note"><strong>Live classes are available on:</strong> Calgary/Edmonton/Alberta / Saskatchewan / Manitoba / Ontario</p>
+                  <p class="estimator-fine-note"><strong>Live classes are available in:</strong> Calgary/Edmonton/Alberta / Saskatchewan / Manitoba / Ontario</p>
                 </div>
               </div>
 
@@ -832,7 +832,7 @@ section{padding:72px 0 0}
               <span class="val green" id="csChild">$0</span>
             </div>
             <div class="summary-row">
-              <span class="lbl">Estimated potential grant</span>
+              <span class="lbl">Estimated grant</span>
               <span class="val" id="csTotal" style="color:var(--gold);font-size:1.15rem">$0</span>
             </div>
             <div class="summary-row">
@@ -844,7 +844,7 @@ section{padding:72px 0 0}
         <div class="form-success" id="formSuccess">
           Thank you! Your grant estimate request has been submitted. A program advisor will contact you shortly to confirm your eligibility and next steps.
         </div>
-        <button class="submit-btn" type="submit" form="checkoutForm">Submit My Grant Estimate</button>
+        <button class="submit-btn" type="submit" form="checkoutForm">Request My <span id="checkoutCtaAmount">$0</span> Grant</button>
         <div class="cs-secure">
           <svg style="color:var(--muted)"><use href="#lock"/></svg>
           Your information is kept private and secure.
@@ -1351,7 +1351,7 @@ function buildCourseCards(){
       <h3>${c.name}</h3>
       <p>${c.description}</p>
       <div class="cc-meta">
-        <div class="m">Potential base grant<b>${fmt(c.baseGrant)}</b></div>
+        <div class="m">Base grant<b>${fmt(c.baseGrant)}+</b></div>
         <div class="m" style="text-align:right">Monthly payment<b>$${c.monthlyPayment}/month</b></div>
       </div>
       <button class="cc-btn" type="button" onclick="openModal('${k}')">View Details</button>
@@ -1408,6 +1408,7 @@ function render(){
   document.getElementById("csChildLbl").textContent = `Child grant (${state.children} × $3,000)`;
   document.getElementById("csChild").textContent = fmt(r.childTotal);
   document.getElementById("csTotal").textContent = fmt(r.total);
+  document.getElementById("checkoutCtaAmount").textContent = fmt(r.total);
 
   /* mobile cta */
   document.getElementById("mcAmount").textContent = fmt(r.total);
@@ -1474,7 +1475,7 @@ document.getElementById("checkoutForm").addEventListener("submit", e => {
   if(!form.checkValidity()){ form.reportValidity(); return; }
   document.getElementById("formSuccess").classList.add("show");
   form.querySelectorAll("input").forEach(i => i.disabled = true);
-  document.querySelector(".submit-btn").textContent = "Estimate Submitted ✓";
+  document.querySelector(".submit-btn").textContent = "Grant Request Submitted ✓";
   document.querySelector(".submit-btn").disabled = true;
 });
 
