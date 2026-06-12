@@ -355,12 +355,35 @@ section{padding:72px 0 0}
   padding:15px;border-radius:999px;transition:all .18s ease;box-shadow:0 10px 24px rgba(18,53,91,.3);
 }
 .submit-btn:hover{background:#0d2a4a;transform:translateY(-2px);box-shadow:0 14px 30px rgba(18,53,91,.4)}
+.submit-btn:disabled{opacity:.7;cursor:not-allowed;transform:none;box-shadow:none}
 .cs-secure{display:flex;align-items:center;justify-content:center;gap:7px;font-size:.74rem;color:var(--muted);margin-top:12px}
 .cs-secure svg{width:14px;height:14px}
+.form-card.submitted > h3,
+.form-card.submitted > .fc-sub,
+.form-card.submitted > .form-grid,
+.form-card.submitted > .checkout-summary,
+.form-card.submitted > .form-success,
+.form-card.submitted > .submit-btn,
+.form-card.submitted > .cs-secure{display:none}
+.form-thankyou{display:none;text-align:center;padding:18px 8px 6px}
+.form-card.submitted .form-thankyou{display:block;animation:fadeUp .35s ease}
+.thankyou-badge{
+  display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;
+  background:rgba(24,160,88,.12);color:var(--green);margin-bottom:18px;
+}
+.thankyou-badge svg{width:30px;height:30px}
+.form-thankyou h3{font-size:1.55rem;margin-bottom:10px}
+.form-thankyou p{max-width:500px;margin:0 auto 14px;color:var(--muted);line-height:1.7}
+.thankyou-highlight{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}
+.thankyou-highlight .item{background:#f8fbfd;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px}
+.thankyou-highlight .k{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.thankyou-highlight .v{font-size:1rem;font-weight:800;color:var(--charcoal)}
+.thankyou-note{font-size:.82rem;color:var(--muted)}
 .form-success{
   display:none;background:rgba(24,160,88,.1);border:1.5px solid rgba(24,160,88,.4);color:#116a3c;
   border-radius:var(--radius-md);padding:16px 18px;font-weight:600;font-size:.92rem;margin-top:18px;
 }
+.form-success.form-error{background:rgba(201,57,57,.08);border-color:rgba(201,57,57,.28);color:#8f1f1f}
 .form-success.show{display:block;animation:fadeUp .35s ease}
 
 /* FAQ */
@@ -500,6 +523,7 @@ section{padding:72px 0 0}
   .stats-grid{justify-content:flex-start;padding:14px 16px;gap:14px 18px}
   .steps-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
+  .thankyou-highlight{grid-template-columns:1fr}
   .elig-card{grid-template-columns:1fr;text-align:center;padding:40px 24px}
   .elig-ico{margin:0 auto}
   .hero-shell{padding:44px 18px 0;border-radius:22px}
@@ -767,9 +791,13 @@ section{padding:72px 0 0}
       <p>Complete your application details and submit your grant estimate. A program advisor will follow up to confirm eligibility.</p>
     </div>
     <div class="checkout-wrap">
-      <form class="form-card reveal" id="checkoutForm" novalidate>
+      <form class="form-card reveal" id="checkoutForm" action="https://formspree.io/f/xrevyaqa" method="POST" novalidate>
         <h3>Your Application Details</h3>
         <p class="fc-sub">please fill out application details to reserver your course seat and request grant.</p>
+        <input type="hidden" name="selectedCourseName" id="selectedCourseName">
+        <input type="hidden" name="baseGrantAmount" id="baseGrantAmount">
+        <input type="hidden" name="childGrantAmount" id="childGrantAmount">
+        <input type="hidden" name="estimatedGrantAmount" id="estimatedGrantAmount">
         <div class="form-grid">
           <div class="form-field">
             <label for="fName">First Name</label>
@@ -841,13 +869,29 @@ section{padding:72px 0 0}
             </div>
           </div>
         </div>
-        <div class="form-success" id="formSuccess">
-          Thank you! Your grant estimate request has been submitted. A program advisor will contact you shortly to confirm your eligibility and next steps.
+        <div class="form-success form-error" id="formError" role="alert">
+          Your application could not be submitted right now. Please try again in a moment.
         </div>
         <button class="submit-btn" type="submit" form="checkoutForm">Request My <span id="checkoutCtaAmount">$0</span> Grant</button>
         <div class="cs-secure">
           <svg style="color:var(--muted)"><use href="#lock"/></svg>
           Your information is kept private and secure.
+        </div>
+        <div class="form-thankyou" id="thankYouScreen">
+          <div class="thankyou-badge" aria-hidden="true"><svg><use href="#checkmark"/></svg></div>
+          <h3>Application Submitted</h3>
+          <p>Thank you. Your grant estimate request has been received and a program advisor will contact you shortly to confirm eligibility and next steps.</p>
+          <div class="thankyou-highlight">
+            <div class="item">
+              <div class="k">Selected Course</div>
+              <div class="v" id="thankYouCourse">—</div>
+            </div>
+            <div class="item">
+              <div class="k">Estimated Grant</div>
+              <div class="v" id="thankYouAmount">$0</div>
+            </div>
+          </div>
+          <p class="thankyou-note">Keep an eye on your email and phone. We will use the details you submitted to follow up.</p>
         </div>
       </form>
     </div>
@@ -1327,6 +1371,10 @@ const checkoutChildren= document.getElementById("checkoutChildren");
 const childCountEl    = document.getElementById("childCount");
 const childMinus      = document.getElementById("childMinus");
 const childPlus       = document.getElementById("childPlus");
+const checkoutForm    = document.getElementById("checkoutForm");
+const formError       = document.getElementById("formError");
+const submitBtn       = checkoutForm.querySelector(".submit-btn");
+const thankYouScreen  = document.getElementById("thankYouScreen");
 
 /* ================= Build selects ================= */
 function buildSelects(){
@@ -1410,6 +1458,14 @@ function render(){
   document.getElementById("csTotal").textContent = fmt(r.total);
   document.getElementById("checkoutCtaAmount").textContent = fmt(r.total);
 
+  /* submission values */
+  document.getElementById("selectedCourseName").value = r.course.name;
+  document.getElementById("baseGrantAmount").value = fmt(r.base);
+  document.getElementById("childGrantAmount").value = fmt(r.childTotal);
+  document.getElementById("estimatedGrantAmount").value = fmt(r.total);
+  document.getElementById("thankYouCourse").textContent = r.course.name;
+  document.getElementById("thankYouAmount").textContent = fmt(r.total);
+
   /* mobile cta */
   document.getElementById("mcAmount").textContent = fmt(r.total);
 }
@@ -1469,14 +1525,34 @@ document.getElementById("modalUseBtn").addEventListener("click", () => {
 });
 
 /* ================= Checkout form ================= */
-document.getElementById("checkoutForm").addEventListener("submit", e => {
+checkoutForm.addEventListener("submit", async e => {
   e.preventDefault();
-  const form = e.target;
-  if(!form.checkValidity()){ form.reportValidity(); return; }
-  document.getElementById("formSuccess").classList.add("show");
-  form.querySelectorAll("input").forEach(i => i.disabled = true);
-  document.querySelector(".submit-btn").textContent = "Grant Request Submitted ✓";
-  document.querySelector(".submit-btn").disabled = true;
+  if(!checkoutForm.checkValidity()){ checkoutForm.reportValidity(); return; }
+
+  const defaultButtonHtml = submitBtn.innerHTML;
+  formError.classList.remove("show");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+
+  try{
+    const response = await fetch(checkoutForm.action, {
+      method: checkoutForm.method,
+      body: new FormData(checkoutForm),
+      headers: { "Accept": "application/json" }
+    });
+
+    if(!response.ok) throw new Error("Formspree submission failed");
+
+    checkoutForm.querySelectorAll("input, select").forEach(field => {
+      field.disabled = true;
+    });
+    checkoutForm.classList.add("submitted");
+    thankYouScreen.scrollIntoView({behavior:"smooth", block:"nearest"});
+  } catch(error){
+    formError.classList.add("show");
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = defaultButtonHtml;
+  }
 });
 
 function scrollToCheckout(){
