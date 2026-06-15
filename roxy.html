@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roxy | MyGrantsCanada.com — See Your Grant Funds Fast</title>
+<meta name="description" content="Estimate your potential education grant. $3,000 per child potential grant, financing may start from $149/month. Study from anywhere in Canada.">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/favicons/site.webmanifest">
+<link rel="canonical" href="https://mygrantscanada.com/roxy">
+<style>
+:root{
+  --navy:#12355B;
+  --green:#18A058;
+  --gold:#F4B740;
+  --bg-soft:#F7FAFC;
+  --charcoal:#1E293B;
+  --muted:#64748B;
+  --border:#E2E8F0;
+  --hero-1:#0B5A89;
+  --hero-2:#12355B;
+  --hero-3:#1B4332;
+  --radius-lg:24px;
+  --radius-md:16px;
+  --radius-sm:10px;
+  --shadow-card:0 10px 30px rgba(18,53,91,.10);
+  --shadow-pop:0 25px 60px rgba(18,53,91,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',-apple-system,BlinkMacSystemFont,'Inter',Roboto,Arial,sans-serif;
+  color:var(--charcoal);
+  background:var(--bg-soft);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer}
+input,select{font-family:inherit}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,250,252,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:106px}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;line-height:1}
+.logo img{height:82px;width:auto;display:block}
+.logo-roxy{
+  display:inline-flex;align-items:baseline;gap:2px;
+  font-size:1.55rem;font-weight:800;letter-spacing:-.03em;
+  color:var(--navy);white-space:nowrap;
+}
+.logo-roxy .dash{color:var(--gold)}
+.logo-roxy .word{color:var(--green)}
+.header-cta{
+  background:var(--green);color:#fff;border:none;
+  padding:10px 20px;border-radius:999px;font-weight:700;font-size:.92rem;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.header-cta:hover{background:#13854a;transform:translateY(-1px);box-shadow:0 8px 20px rgba(24,160,88,.35)}
+
+/* ---------- Hero ---------- */
+.hero{padding:26px 0 0}
+.hero-shell{
+  position:relative;
+  background:linear-gradient(135deg,var(--hero-1) 0%,var(--hero-2) 52%,var(--hero-3) 100%);
+  border-radius:28px;
+  padding:56px 28px 0;
+  overflow:hidden;
+}
+.hero-shell::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(700px 380px at 85% -10%,rgba(244,183,64,.14),transparent 60%),
+    radial-gradient(600px 420px at -10% 110%,rgba(24,160,88,.20),transparent 60%);
+  pointer-events:none;
+}
+.hero-head{position:relative;text-align:center;max-width:860px;margin:0 auto 40px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  color:#fff;font-size:.82rem;font-weight:600;
+  padding:7px 16px;border-radius:999px;margin-bottom:20px;
+}
+.hero-badge .leaf{width:15px;height:15px}
+.hero h1{
+  color:#fff;font-size:clamp(2.2rem,5.6vw,3.9rem);
+  font-weight:800;letter-spacing:-.02em;line-height:1.08;margin-bottom:14px;
+}
+.hero h1 .gold{color:var(--gold)}
+.hero-sub{color:rgba(255,255,255,.85);font-size:clamp(1rem,2.2vw,1.25rem);font-weight:500}
+.hero-grid{
+  position:relative;
+  display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);
+  gap:28px;align-items:stretch;
+}
+
+/* Estimator card */
+.estimator{
+  background:#fff;border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-pop);
+  margin-bottom:48px;
+  overflow:hidden;
+}
+.estimator-topbar{height:6px;background:linear-gradient(90deg,var(--green),var(--gold),var(--hero-1))}
+.estimator-body{padding:26px 26px 28px}
+.estimator-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.estimator-title{display:flex;align-items:center;gap:12px}
+.check-icon{
+  width:42px;height:42px;border-radius:12px;flex:none;
+  background:rgba(24,160,88,.12);display:flex;align-items:center;justify-content:center;
+}
+.check-icon svg{width:22px;height:22px}
+.estimator-title h2{font-size:1.25rem;font-weight:800;color:var(--charcoal);letter-spacing:-.01em}
+.live-tag{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin-top:2px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.estimate-chip{
+  background:rgba(244,183,64,.15);color:#9a6c08;border:1px solid rgba(244,183,64,.45);
+  font-size:.78rem;font-weight:700;padding:6px 14px;border-radius:999px;white-space:nowrap;
+}
+.estimator-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding-top:20px}
+.field-label{display:block;font-size:.86rem;font-weight:700;color:var(--charcoal);margin-bottom:8px}
+.select-wrap{position:relative}
+.select-wrap select{
+  width:100%;appearance:none;-webkit-appearance:none;
+  padding:13px 42px 13px 14px;font-size:.95rem;font-weight:600;color:var(--charcoal);
+  border:1.5px solid var(--border);border-radius:var(--radius-sm);background:#fff;
+  transition:border-color .15s ease, box-shadow .15s ease;cursor:pointer;
+}
+.select-wrap select:hover{border-color:#cbd5e1}
+.select-wrap select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(24,160,88,.15)}
+.select-wrap::after{
+  content:"";position:absolute;right:16px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);pointer-events:none;
+}
+.info-link{
+  margin:10px auto 0;background:rgba(11,90,137,.08);border:1px solid rgba(11,90,137,.18);
+  color:var(--hero-1);font-size:.82rem;font-weight:800;
+  min-width:220px;width:fit-content;padding:10px 16px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+  gap:8px;text-decoration:none;transition:all .15s ease;
+}
+.info-link:hover{color:var(--navy);background:rgba(11,90,137,.13);border-color:rgba(11,90,137,.28);transform:translateY(-1px)}
+.stepper{display:flex;align-items:center;gap:10px}
+.step-btn{
+  width:46px;height:46px;border-radius:50%;flex:none;
+  border:1.5px solid var(--border);background:#fff;font-size:1.3rem;font-weight:700;color:var(--charcoal);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s ease;line-height:1;
+}
+.step-btn:hover:not(:disabled){border-color:var(--green);color:var(--green);background:rgba(24,160,88,.06)}
+.step-btn:disabled{opacity:.35;cursor:not-allowed}
+.step-value{
+  flex:1;text-align:center;font-size:1.25rem;font-weight:800;color:var(--charcoal);
+  border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:9px 0;background:#fff;
+}
+.stepper-note{font-size:.8rem;color:var(--muted);margin-top:10px}
+.stepper-note strong{color:var(--green)}
+.estimator-fine-note{
+  margin-top:18px;padding:12px 14px;
+  border:1px dashed rgba(17,106,60,.22);border-radius:14px;
+  background:rgba(24,160,88,.05);
+  font-size:.78rem;line-height:1.55;color:var(--muted);
+}
+.estimator-fine-note strong{color:#116a3c}
+
+/* Summary side */
+.summary-box{
+  border:1.5px solid var(--border);border-radius:var(--radius-md);
+  padding:18px 18px 16px;background:#fff;
+}
+.summary-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:7px 0;font-size:.92rem}
+.summary-row + .summary-row{border-top:1px dashed var(--border)}
+.summary-row .lbl{color:var(--muted);font-weight:600}
+.summary-row .val{font-weight:800;color:var(--charcoal);white-space:nowrap}
+.summary-row .val.green{color:var(--green)}
+.total-banner{
+  margin-top:14px;background:var(--navy);border-radius:var(--radius-md);
+  padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  position:relative;overflow:hidden;
+}
+.total-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(220px 120px at 110% -20%,rgba(244,183,64,.25),transparent 65%)}
+.total-banner .t-label{font-size:.68rem;font-weight:800;letter-spacing:.1em;color:rgba(255,255,255,.85);text-transform:uppercase}
+.total-banner .t-sub{font-size:.74rem;color:rgba(255,255,255,.6);margin-top:2px}
+.total-banner .t-amount{
+  font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:var(--gold);
+  font-variant-numeric:tabular-nums;position:relative;z-index:1;
+  transition:transform .25s ease;
+}
+.total-banner .t-amount.bump{transform:scale(1.08)}
+.total-banner-note{
+  margin-top:8px;font-size:.76rem;line-height:1.4;color:var(--muted);text-align:center;
+}
+.finance-strip{
+  margin-top:12px;display:flex;align-items:center;gap:9px;
+  background:rgba(24,160,88,.09);border:1px solid rgba(24,160,88,.25);
+  border-radius:var(--radius-sm);padding:10px 14px;font-size:.85rem;font-weight:600;color:#116a3c;
+}
+.finance-strip svg{width:18px;height:18px;flex:none}
+.cta-main{
+  width:100%;margin-top:14px;
+  background:var(--green);color:#fff;border:none;
+  font-size:.94rem;font-weight:800;padding:15px 18px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  line-height:1.15;
+  transition:all .18s ease;box-shadow:0 10px 24px rgba(24,160,88,.32);
+}
+.cta-main-label{
+  display:inline-flex;align-items:baseline;justify-content:center;gap:.35em;
+  flex-wrap:wrap;text-align:center;
+}
+.cta-main-label #heroCtaAmount{white-space:nowrap}
+.cta-main:hover{background:#13854a;transform:translateY(-2px);box-shadow:0 14px 30px rgba(24,160,88,.42)}
+.cta-main svg{width:18px;height:18px;transition:transform .18s ease}
+.cta-main:hover svg{transform:translateX(4px)}
+.cta-fine{font-size:.74rem;color:var(--muted);text-align:center;margin-top:10px}
+
+/* Hero image */
+.hero-figure{
+  position:relative;display:flex;align-items:flex-end;justify-content:center;
+  min-height:700px;margin-bottom:48px;overflow:hidden;
+  border-radius:32px;border:1px solid rgba(255,255,255,.26);
+  box-shadow:0 28px 60px rgba(7,17,30,.32),0 0 0 10px rgba(255,255,255,.08);
+}
+.hero-figure img{
+  width:100%;height:100%;max-height:none;object-fit:cover;object-position:center top;
+  position:relative;z-index:1;
+}
+.hero-figure .glow{
+  position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);
+  width:120%;height:75%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(244,183,64,.22),transparent 70%);
+}
+.float-chip{
+  position:absolute;z-index:2;background:#fff;border-radius:14px;box-shadow:var(--shadow-pop);
+  padding:10px 16px;font-size:.82rem;font-weight:700;color:var(--charcoal);
+  display:flex;align-items:center;gap:9px;
+  animation:floaty 4.5s ease-in-out infinite;
+}
+.float-chip .big{font-size:1.05rem;color:var(--green)}
+.float-chip.c1{top:26%;left:-2%}
+.float-chip.c2{bottom:16%;right:2%;animation-delay:1.4s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ---------- Stats bar ---------- */
+.stats{margin-top:-18px;position:relative;z-index:5}
+.stats-grid{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 28px;
+  background:#fff;border:1px solid var(--border);border-radius:18px;
+  box-shadow:var(--shadow-card);padding:14px 22px;
+}
+.stat-card{
+  display:flex;align-items:center;gap:10px;
+  min-width:0;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.stat-card:hover{transform:translateY(-1px);opacity:.92}
+.stat-card .ico{
+  width:28px;height:28px;border-radius:999px;flex:none;
+  display:flex;align-items:center;justify-content:center;background:rgba(18,53,91,.07);
+}
+.stat-card .ico svg{width:15px;height:15px}
+.stat-card .copy{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.stat-card .v{font-size:.84rem;font-weight:800;color:var(--navy);line-height:1.2}
+.stat-card .d{font-size:.84rem;color:var(--muted);font-weight:600;line-height:1.2}
+
+/* ---------- Sections ---------- */
+section{padding:72px 0 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 42px}
+.sec-kicker{
+  display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--green);background:rgba(24,160,88,.1);padding:6px 14px;border-radius:999px;margin-bottom:14px;
+}
+.sec-head h2{font-size:clamp(1.6rem,3.6vw,2.3rem);font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:10px}
+.sec-head p{color:var(--muted);font-size:1rem}
+
+/* How it works */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:30px 26px;position:relative;box-shadow:var(--shadow-card);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.step-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(18,53,91,.14)}
+.step-num{
+  width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:1.1rem;color:#fff;background:var(--navy);margin-bottom:16px;
+}
+.step-card:nth-child(2) .step-num{background:var(--green)}
+.step-card:nth-child(3) .step-num{background:var(--gold);color:var(--navy)}
+.step-card h3{font-size:1.08rem;font-weight:800;margin-bottom:8px;color:var(--charcoal)}
+.step-card p{font-size:.9rem;color:var(--muted)}
+
+/* Courses */
+.courses-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.course-card{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-md);
+  padding:22px 20px;display:flex;flex-direction:column;
+  transition:all .2s ease;box-shadow:0 4px 14px rgba(18,53,91,.06);
+}
+.course-card:hover{transform:translateY(-4px);border-color:#cbd5e1;box-shadow:0 16px 34px rgba(18,53,91,.13)}
+.course-card.selected{border-color:var(--green);box-shadow:0 0 0 3px rgba(24,160,88,.15),0 16px 34px rgba(18,53,91,.13)}
+.cc-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.cc-grant{
+  font-size:.72rem;font-weight:800;color:var(--green);background:rgba(24,160,88,.1);
+  padding:4px 10px;border-radius:999px;white-space:nowrap;
+}
+.cc-selected-tag{display:none;font-size:.68rem;font-weight:800;color:#fff;background:var(--green);padding:4px 10px;border-radius:999px}
+.course-card.selected .cc-selected-tag{display:inline-block}
+.course-card h3{font-size:1.02rem;font-weight:800;color:var(--charcoal);margin-bottom:6px;letter-spacing:-.01em}
+.course-card p{font-size:.84rem;color:var(--muted);flex:1;margin-bottom:14px}
+.cc-meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:12px;margin-bottom:12px}
+.cc-meta .m{font-size:.74rem;color:var(--muted);font-weight:600}
+.cc-meta .m b{display:block;font-size:.95rem;color:var(--navy);font-weight:800}
+.cc-btn{
+  width:100%;background:#fff;border:1.5px solid var(--navy);color:var(--navy);
+  font-weight:700;font-size:.88rem;padding:10px;border-radius:999px;transition:all .18s ease;
+}
+.cc-btn:hover{background:var(--navy);color:#fff}
+
+/* Eligibility */
+.elig-card{
+  background:linear-gradient(135deg,var(--hero-2),var(--hero-3));
+  border-radius:var(--radius-lg);padding:52px 40px;color:#fff;
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.elig-card::after{content:"";position:absolute;inset:0;background:radial-gradient(440px 260px at 100% 0%,rgba(244,183,64,.16),transparent 65%)}
+.elig-ico{
+  width:74px;height:74px;border-radius:20px;background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;flex:none;
+}
+.elig-ico svg{width:38px;height:38px}
+.elig-card h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;margin-bottom:10px;letter-spacing:-.01em}
+.elig-card p{color:rgba(255,255,255,.82);font-size:.98rem;max-width:680px;position:relative;z-index:1}
+
+/* Checkout */
+.checkout-wrap{max-width:780px;margin:0 auto}
+.form-card{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-card);padding:34px 30px;
+}
+.form-card h3{font-size:1.25rem;font-weight:800;color:var(--charcoal);margin-bottom:4px}
+.form-card .fc-sub{font-size:.88rem;color:var(--muted);margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-field{display:flex;flex-direction:column}
+.form-field.full{grid-column:1 / -1}
+.form-field label{font-size:.82rem;font-weight:700;color:var(--charcoal);margin-bottom:6px}
+.form-field input,.form-field select{
+  padding:12px 14px;font-size:.93rem;border:1.5px solid var(--border);border-radius:var(--radius-sm);
+  background:#fff;color:var(--charcoal);transition:border-color .15s ease, box-shadow .15s ease;
+}
+.form-field input:focus,.form-field select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(24,160,88,.15)}
+.form-field select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='none' stroke='%2364748B' stroke-width='2' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.checkout-summary{
+  margin-top:24px;padding-top:24px;border-top:1px solid var(--border);
+}
+.checkout-summary h3{font-size:1.05rem;font-weight:800;margin-bottom:16px;display:flex;align-items:center;gap:9px}
+.checkout-summary h3 svg{width:20px;height:20px}
+.cs-rows{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:6px 16px;margin-bottom:14px}
+.submit-btn{
+  width:100%;background:var(--navy);color:#fff;border:none;font-size:1rem;font-weight:800;
+  padding:15px;border-radius:999px;transition:all .18s ease;box-shadow:0 10px 24px rgba(18,53,91,.3);
+}
+.submit-btn:hover{background:#0d2a4a;transform:translateY(-2px);box-shadow:0 14px 30px rgba(18,53,91,.4)}
+.submit-btn:disabled{opacity:.7;cursor:not-allowed;transform:none;box-shadow:none}
+.cs-secure{display:flex;align-items:center;justify-content:center;gap:7px;font-size:.74rem;color:var(--muted);margin-top:12px}
+.cs-secure svg{width:14px;height:14px}
+.form-card.submitted > h3,
+.form-card.submitted > .fc-sub,
+.form-card.submitted > .form-grid,
+.form-card.submitted > .checkout-summary,
+.form-card.submitted > .form-success,
+.form-card.submitted > .submit-btn,
+.form-card.submitted > .cs-secure{display:none}
+.form-thankyou{display:none;text-align:center;padding:18px 8px 6px}
+.form-card.submitted .form-thankyou{display:block;animation:fadeUp .35s ease}
+.thankyou-badge{
+  display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;border-radius:50%;
+  background:rgba(24,160,88,.12);color:var(--green);margin-bottom:18px;
+}
+.thankyou-badge svg{width:30px;height:30px}
+.form-thankyou h3{font-size:1.55rem;margin-bottom:10px}
+.form-thankyou p{max-width:500px;margin:0 auto 14px;color:var(--muted);line-height:1.7}
+.thankyou-highlight{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}
+.thankyou-highlight .item{background:#f8fbfd;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px}
+.thankyou-highlight .k{font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.thankyou-highlight .v{font-size:1rem;font-weight:800;color:var(--charcoal)}
+.thankyou-note{font-size:.82rem;color:var(--muted)}
+.form-success{
+  display:none;background:rgba(24,160,88,.1);border:1.5px solid rgba(24,160,88,.4);color:#116a3c;
+  border-radius:var(--radius-md);padding:16px 18px;font-weight:600;font-size:.92rem;margin-top:18px;
+}
+.form-success.form-error{background:rgba(201,57,57,.08);border-color:rgba(201,57,57,.28);color:#8f1f1f}
+.form-success.show{display:block;animation:fadeUp .35s ease}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-md);
+  overflow:hidden;transition:border-color .2s ease, box-shadow .2s ease;
+}
+.faq-item.open{border-color:rgba(24,160,88,.5);box-shadow:0 10px 26px rgba(18,53,91,.1)}
+.faq-q{
+  width:100%;background:none;border:none;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:18px 22px;font-size:.98rem;font-weight:700;color:var(--charcoal);
+}
+.faq-q .chev{
+  width:30px;height:30px;flex:none;border-radius:50%;background:var(--bg-soft);
+  display:flex;align-items:center;justify-content:center;transition:transform .25s ease;
+}
+.faq-q .chev svg{width:14px;height:14px}
+.faq-item.open .faq-q .chev{transform:rotate(180deg);background:rgba(24,160,88,.12)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 22px 20px;font-size:.92rem;color:var(--muted)}
+
+/* Footer */
+.site-footer{margin-top:80px;background:var(--navy);color:rgba(255,255,255,.75);padding:46px 0 38px}
+.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;margin-bottom:28px}
+.footer-logo{display:inline-flex;align-items:center;line-height:0}
+.footer-logo img{height:92px;width:auto;display:block}
+.footer-tag{font-size:.85rem;margin-top:8px;max-width:320px}
+.footer-disclaimer{
+  border-top:1px solid rgba(255,255,255,.14);padding-top:22px;
+  font-size:.78rem;color:rgba(255,255,255,.55);max-width:880px;
+}
+.footer-copy{font-size:.76rem;color:rgba(255,255,255,.4);margin-top:14px}
+
+/* Modal */
+.modal-overlay{
+  position:fixed;inset:0;z-index:100;background:rgba(13,29,49,.55);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity .22s ease;
+}
+.modal-overlay.show{opacity:1;pointer-events:auto}
+.modal{
+  background:#fff;border-radius:var(--radius-lg);max-width:680px;width:100%;max-height:min(90vh,860px);
+  box-shadow:0 40px 90px rgba(13,29,49,.4);overflow:hidden;
+  display:flex;flex-direction:column;
+  transform:translateY(16px) scale(.97);transition:transform .25s ease;
+}
+.modal-overlay.show .modal{transform:translateY(0) scale(1)}
+.modal-head{
+  background:linear-gradient(135deg,var(--hero-1),var(--hero-2));
+  padding:26px 28px;color:#fff;position:relative;
+}
+.modal-head .mh-kicker{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.modal-head h3{font-size:1.35rem;font-weight:800;letter-spacing:-.01em;padding-right:34px}
+.modal-close{
+  position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.14);border:none;color:#fff;font-size:1.1rem;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:background .15s ease;
+}
+.modal-close:hover{background:rgba(255,255,255,.28)}
+.modal-body{padding:24px 28px 28px;overflow:auto}
+.modal-body .m-desc{font-size:.93rem;color:var(--muted);margin-bottom:18px}
+.m-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.m-stat{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:14px 16px}
+.m-stat .k{font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.m-stat .v{font-size:1.2rem;font-weight:800;color:var(--navy);margin-top:3px}
+.m-stat.grant .v{color:var(--green)}
+.m-note{font-size:.76rem;color:var(--muted);background:var(--bg-soft);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:20px}
+.m-curriculum{display:grid;gap:14px;margin-bottom:20px}
+.m-curriculum-block{border:1.5px solid var(--border);border-radius:var(--radius-md);padding:16px 18px;background:#fff}
+.m-curriculum-title{font-size:.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.m-curriculum-copy{font-size:.9rem;color:var(--charcoal);margin-bottom:8px}
+.m-curriculum-copy:last-child{margin-bottom:0}
+.m-curriculum-list{margin:0;padding-left:18px;color:var(--charcoal);display:grid;gap:7px;font-size:.9rem}
+.m-curriculum-list li strong{color:var(--navy)}
+.m-score-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.m-score-item{border:1px solid var(--border);border-radius:12px;padding:10px 12px;background:var(--bg-soft)}
+.m-score-item .w{font-size:.78rem;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.m-score-item .d{font-size:.85rem;color:var(--charcoal)}
+.m-file-link{
+  display:inline-flex;align-items:center;justify-content:center;margin-top:2px;
+  background:rgba(24,160,88,.1);border:1px solid rgba(24,160,88,.22);color:var(--green);
+  font-size:.9rem;font-weight:800;padding:12px 16px;border-radius:999px;text-decoration:none;
+  transition:all .18s ease;
+}
+.m-file-link:hover{background:rgba(24,160,88,.16);box-shadow:0 8px 20px rgba(24,160,88,.18)}
+.m-file-link.is-disabled,
+.m-file-link:disabled{opacity:.55;cursor:not-allowed;pointer-events:none;box-shadow:none}
+.modal-actions{display:flex;gap:12px}
+.m-use{
+  flex:1;background:var(--green);color:#fff;border:none;font-weight:800;font-size:.95rem;
+  padding:13px;border-radius:999px;transition:all .18s ease;
+}
+.m-use:hover{background:#13854a;box-shadow:0 8px 20px rgba(24,160,88,.35)}
+.m-close2{
+  background:#fff;border:1.5px solid var(--border);color:var(--muted);font-weight:700;font-size:.95rem;
+  padding:13px 22px;border-radius:999px;transition:all .15s ease;
+}
+.m-close2:hover{border-color:#cbd5e1;color:var(--charcoal)}
+
+/* Sticky mobile CTA */
+.mobile-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:#fff;border-top:1px solid var(--border);
+  box-shadow:0 -8px 24px rgba(18,53,91,.12);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  display:none;align-items:center;gap:12px;
+  transform:translateY(110%);transition:transform .3s ease;
+}
+.mobile-cta.visible{transform:translateY(0)}
+.mc-info{flex:1;min-width:0}
+.mc-info .a{font-size:1.05rem;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums}
+.mc-info .b{font-size:.7rem;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mc-btn{
+  background:var(--green);color:#fff;border:none;font-weight:800;font-size:.9rem;
+  padding:12px 20px;border-radius:999px;white-space:nowrap;
+}
+
+/* Reveal animation */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease, transform .55s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1020px){
+  .courses-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr;align-items:start}
+  .hero-figure{min-height:620px;margin-bottom:42px;order:2}
+  .hero-figure img{width:100%;height:100%;max-height:none}
+  .estimator{order:1;margin-bottom:0}
+  .float-chip.c1{top:24%;left:8%}
+  .float-chip.c2{bottom:14%;right:6%}
+}
+@media (max-width:760px){
+  .estimator-grid{grid-template-columns:1fr}
+  .stats-grid{justify-content:flex-start;padding:14px 16px;gap:14px 18px}
+  .steps-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .thankyou-highlight{grid-template-columns:1fr}
+  .elig-card{grid-template-columns:1fr;text-align:center;padding:40px 24px}
+  .elig-ico{margin:0 auto}
+  .hero-shell{padding:44px 18px 0;border-radius:22px}
+  .mobile-cta{display:flex}
+  section{padding:56px 0 0}
+  body{padding-bottom:74px}
+}
+@media (max-width:480px){
+  .courses-grid{grid-template-columns:1fr}
+  .stats-grid{gap:12px 14px}
+  .stat-card{width:100%}
+  .modal-actions{flex-direction:column}
+  .m-close2{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SVG defs ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="maple" viewBox="0 0 24 24">
+      <path d="M12 2l1.6 3.4 2.6-1.2-.7 3.2 3.3-.4-1.7 2.8 3.4 1.2-2.7 2 2 2.6-3.4.2.6 3.3-3-1.5-.6 3.4H11l-.6-3.4-3 1.5.6-3.3-3.4-.2 2-2.6-2.7-2 3.4-1.2L5.2 7l3.3.4-.7-3.2 2.6 1.2L12 2z" fill="currentColor"/>
+    </symbol>
+    <symbol id="checkmark" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#18A058" stroke-width="2"/>
+      <path d="M8 12.5l2.8 2.8L16.5 9" fill="none" stroke="#18A058" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="card-ico" viewBox="0 0 24 24">
+      <rect x="2.5" y="5" width="19" height="14" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M2.5 9.5h19" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M6 14.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="arrow-r" viewBox="0 0 24 24">
+      <path d="M4 12h15m0 0l-6-6m6 6l-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="shield" viewBox="0 0 24 24">
+      <path d="M12 2.5l7.5 3v6c0 5-3.2 8.4-7.5 10-4.3-1.6-7.5-5-7.5-10v-6l7.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M8.8 12l2.3 2.3 4.2-4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="map-pin" viewBox="0 0 24 24">
+      <path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="coins" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M12 6.5v11M15.2 9c-.5-1-1.7-1.6-3.2-1.6-1.8 0-3.1.9-3.1 2.3 0 2.9 6.4 1.5 6.4 4.3 0 1.4-1.4 2.4-3.3 2.4-1.7 0-3-.7-3.4-1.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="lock" viewBox="0 0 24 24">
+      <rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M8 10.5V8a4 4 0 118 0v2.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    </symbol>
+    <symbol id="chev-d" viewBox="0 0 24 24">
+      <path d="M5 9l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="receipt" viewBox="0 0 24 24">
+      <path d="M5.5 3h13v18l-2.2-1.6L14 21l-2-1.5L10 21l-2.3-1.6L5.5 21V3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M9 8h6.5M9 12h6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top">
+      <img src="img%20assets/logo/grants-canada-logo.png" alt="Grants Canada logo">
+      <span class="logo-roxy" aria-label="Roxy"><span class="dash">-</span><span class="word">Roxy</span></span>
+    </a>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<main id="top">
+<section class="hero" style="padding-top:26px">
+  <div class="container">
+    <div class="hero-shell">
+      <div class="hero-head">
+        <div class="hero-badge">
+          <svg class="leaf" style="color:var(--gold)"><use href="#maple"/></svg>
+          Get Grants Fast with Dipolma &amp; Certificate Programs in Canada.
+        </div>
+        <h1>Get Up to <span class="gold">$15,000 Support Funds Sent Fast!</span></h1>
+        <p class="hero-sub">Student Grants and Education Bundled in one!</p>
+      </div>
+
+      <div class="hero-grid">
+        <!-- Estimator card -->
+        <div class="estimator" id="estimator">
+          <div class="estimator-topbar"></div>
+          <div class="estimator-body">
+            <div class="estimator-header">
+              <div class="estimator-title">
+                <div class="check-icon"><svg><use href="#checkmark"/></svg></div>
+                <div>
+                  <h2>Grant Estimator</h2>
+                  <div class="live-tag"><span class="live-dot"></span> Live Calculation</div>
+                </div>
+              </div>
+              <span class="estimate-chip">Estimate</span>
+            </div>
+
+            <div class="estimator-grid">
+              <div>
+                <div style="margin-bottom:22px">
+                  <label class="field-label" for="courseSelect">Choose your program</label>
+                  <div class="select-wrap">
+                    <select id="courseSelect" aria-label="Choose your program"></select>
+                  </div>
+                  <button class="info-link" type="button" onclick="openModal(state.courseKey)">
+                    <span>View Curriculum Vitae</span>
+                  </button>
+                </div>
+                <div>
+                  <label class="field-label" id="childrenLabel">How many children do you have?</label>
+                  <div class="stepper" role="group" aria-labelledby="childrenLabel">
+                    <button class="step-btn" id="childMinus" aria-label="Decrease number of children" type="button">&minus;</button>
+                    <div class="step-value" id="childCount" aria-live="polite">0</div>
+                    <button class="step-btn" id="childPlus" aria-label="Increase number of children" type="button">+</button>
+                  </div>
+                  <p class="stepper-note">Each child may add <strong>$3,000</strong> to your potential grant.</p>
+                  <p class="estimator-fine-note"><strong>Live classes are available in:</strong> Calgary/Edmonton/Alberta / Saskatchewan / Manitoba / Ontario</p>
+                </div>
+              </div>
+
+              <div>
+                <div class="summary-box" aria-live="polite">
+                  <div class="summary-row">
+                    <span class="lbl">Selected course</span>
+                    <span class="val" id="sumCourse" style="font-size:.85rem;max-width:55%;text-align:right;white-space:normal">—</span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="lbl">Base program grant</span>
+                    <span class="val green" id="sumBase">$0</span>
+                  </div>
+                  <div class="summary-row">
+                    <span class="lbl" id="sumChildLbl">Child grant (0 × $3,000)</span>
+                    <span class="val green" id="sumChild">$0</span>
+                  </div>
+                </div>
+
+                <div class="total-banner">
+                  <div>
+                    <div class="t-label">Total Potential Grant</div>
+                    <div class="t-sub">You may qualify for</div>
+                  </div>
+                  <div class="t-amount" id="sumTotal">$0</div>
+                </div>
+                <p class="total-banner-note">This amount sent to you in 30 days or less after sign-up</p>
+
+                <div class="finance-strip">
+                  <svg style="color:#18A058"><use href="#card-ico"/></svg>
+                  <span>Financing may start from <b>$149/month</b></span>
+                </div>
+
+                <button class="cta-main" type="button" onclick="scrollToCheckout()">
+                  <span class="cta-main-label">Apply for my <span id="heroCtaAmount">$0</span> Grant</span>
+                  <svg><use href="#arrow-r"/></svg>
+                </button>
+                <p class="cta-fine">No obligation. See what you may qualify for in under a minute.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero image -->
+        <div class="hero-figure">
+          <div class="glow"></div>
+          <div class="float-chip c1"><span class="big">$3,000</span> per child potential grant</div>
+          <div class="float-chip c2">From <span class="big">$149</span>/month</div>
+          <img src="roxy/img/Roxy-image.jpeg" alt="Roxy hero image"
+               onerror="this.onerror=null;this.outerHTML='&lt;div style=&quot;width:100%;max-width:420px;height:420px;border-radius:24px;border:2px dashed rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-weight:700;margin-bottom:48px&quot;&gt;Student Image Placeholder&lt;/div&gt;'">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stats bar ============ -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="ico"><svg style="color:var(--green)"><use href="#coins"/></svg></div>
+        <div class="copy"><div class="v">$3,000/child</div><div class="d">potential grant</div></div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="ico"><svg style="color:var(--navy)"><use href="#card-ico"/></svg></div>
+        <div class="copy"><div class="v">From $149/mo</div><div class="d">financing may apply</div></div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="ico"><svg style="color:#b8860b"><use href="#clock"/></svg></div>
+        <div class="copy"><div class="v">1 hour/day</div><div class="d">5 days/week</div></div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="ico"><svg style="color:var(--hero-1)"><use href="#map-pin"/></svg></div>
+        <div class="copy"><div class="v">Anywhere in Canada</div><div class="d">study fully online</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ How it works ============ -->
+<section id="how">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Simple process</span>
+      <h2>How It Works</h2>
+      <p>Three quick steps from curiosity to application — no commitment until you're ready.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h3>Pick your course</h3>
+        <p>Browse career-focused programs designed for busy adults — about 1 hour per day, 5 days per week, from anywhere in Canada.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">2</div>
+        <h3>Estimate your potential grant</h3>
+        <p>Use the live estimator to see your base program grant plus $3,000 per child you may qualify for.</p>
+      </div>
+      <div class="step-card reveal">
+        <div class="step-num">3</div>
+        <h3>Continue your application</h3>
+        <p>Submit your details and our team will confirm eligibility, financing from $149/month, and pick your start date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Courses ============ -->
+<section id="courses">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Featured programs</span>
+      <h2>Featured Courses</h2>
+      <p>Every program is designed for online study and may include grant options for eligible students.</p>
+    </div>
+    <div class="courses-grid" id="coursesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ Eligibility ============ -->
+<section id="eligibility">
+  <div class="container">
+    <div class="elig-card reveal">
+      <div class="elig-ico"><svg style="color:var(--gold)"><use href="#shield"/></svg></div>
+      <div>
+        <h2>Who May Qualify?</h2>
+        <p>You may be eligible for grant options if you have not taken the same or a similar course within the past two years. Final eligibility may depend on program selection, approval, and student details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Checkout ============ -->
+<section id="checkout">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Final step</span>
+      <h2>Continue to Checkout</h2>
+      <p>Complete your application details and submit your grant estimate. A program advisor will follow up to confirm eligibility.</p>
+    </div>
+    <div class="checkout-wrap">
+      <form class="form-card reveal" id="checkoutForm" action="https://formspree.io/f/xrevyaqa" method="POST" novalidate>
+        <h3>Your Application Details</h3>
+        <p class="fc-sub">please fill out application details to reserver your course seat and request grant.</p>
+        <input type="hidden" name="selectedCourseName" id="selectedCourseName">
+        <input type="hidden" name="baseGrantAmount" id="baseGrantAmount">
+        <input type="hidden" name="childGrantAmount" id="childGrantAmount">
+        <input type="hidden" name="estimatedGrantAmount" id="estimatedGrantAmount">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="fName">First Name</label>
+            <input type="text" id="fName" name="firstName" placeholder="Jane" required autocomplete="given-name">
+          </div>
+          <div class="form-field">
+            <label for="lName">Last Name</label>
+            <input type="text" id="lName" name="lastName" placeholder="Doe" required autocomplete="family-name">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="province">Province</label>
+            <select id="province" name="province" required>
+              <option value="">Select province…</option>
+              <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
+              <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
+              <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
+              <option>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option><option>Yukon</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="checkoutCourse">Preferred Course</label>
+            <select id="checkoutCourse" name="course" required></select>
+          </div>
+          <div class="form-field">
+            <label for="checkoutChildren">Number of Children</label>
+            <select id="checkoutChildren" name="children" required></select>
+          </div>
+          <div class="form-field">
+            <label for="contactTime">Best Time to Contact</label>
+            <select id="contactTime" name="contactTime" required>
+              <option value="">Select a time…</option>
+              <option>Morning (9am – 12pm)</option>
+              <option>Afternoon (12pm – 5pm)</option>
+              <option>Evening (5pm – 8pm)</option>
+              <option>Anytime</option>
+            </select>
+          </div>
+        </div>
+        <div class="checkout-summary reveal" aria-live="polite">
+          <h3><svg style="color:var(--green)"><use href="#receipt"/></svg> Estimate Summary</h3>
+          <div class="cs-rows">
+            <div class="summary-row">
+              <span class="lbl">Selected course</span>
+              <span class="val" id="csCourse" style="font-size:.84rem;max-width:55%;text-align:right;white-space:normal">—</span>
+            </div>
+            <div class="summary-row">
+              <span class="lbl">Base program grant</span>
+              <span class="val green" id="csBase">$0</span>
+            </div>
+            <div class="summary-row">
+              <span class="lbl" id="csChildLbl">Child grant</span>
+              <span class="val green" id="csChild">$0</span>
+            </div>
+            <div class="summary-row">
+              <span class="lbl">Estimated grant</span>
+              <span class="val" id="csTotal" style="color:var(--gold);font-size:1.15rem">$0</span>
+            </div>
+            <div class="summary-row">
+              <span class="lbl">Monthly payment</span>
+              <span class="val">$149/month</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-success form-error" id="formError" role="alert">
+          Your application could not be submitted right now. Please try again in a moment.
+        </div>
+        <button class="submit-btn" type="submit" form="checkoutForm">Request My <span id="checkoutCtaAmount">$0</span> Grant</button>
+        <div class="cs-secure">
+          <svg style="color:var(--muted)"><use href="#lock"/></svg>
+          Your information is kept private and secure.
+        </div>
+        <div class="form-thankyou" id="thankYouScreen">
+          <div class="thankyou-badge" aria-hidden="true"><svg><use href="#checkmark"/></svg></div>
+          <h3>Application Submitted</h3>
+          <p>Thank you. Your grant estimate request has been received and a program advisor will contact you shortly to confirm eligibility and next steps.</p>
+          <div class="thankyou-highlight">
+            <div class="item">
+              <div class="k">Selected Course</div>
+              <div class="v" id="thankYouCourse">—</div>
+            </div>
+            <div class="item">
+              <div class="k">Estimated Grant</div>
+              <div class="v" id="thankYouAmount">$0</div>
+            </div>
+          </div>
+          <p class="thankyou-note">Keep an eye on your email and phone. We will use the details you submitted to follow up.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-kicker">Questions</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about grants and study time.</p>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="img%20assets/logo/grants-canada-logo.png" alt="Grants Canada logo">
+        </div>
+        <p class="footer-tag">Helping Canadians explore education funding options and career-focused online programs.</p>
+      </div>
+      <div style="display:flex;gap:34px;flex-wrap:wrap;font-size:.86rem">
+        <a href="#courses" style="color:rgba(255,255,255,.75);text-decoration:none">Courses</a>
+        <a href="#how" style="color:rgba(255,255,255,.75);text-decoration:none">How It Works</a>
+        <a href="#eligibility" style="color:rgba(255,255,255,.75);text-decoration:none">Eligibility</a>
+        <a href="#faq" style="color:rgba(255,255,255,.75);text-decoration:none">FAQ</a>
+      </div>
+    </div>
+    <p class="footer-disclaimer">
+      This is an estimate only. Final grant, financing, and eligibility details may vary based on program selection, approval, prior course history, and student information.
+    </p>
+    <p class="footer-copy">© 2026 MyGrantsCanada.com — All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ============ Course modal ============ -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="mh-kicker">Program details</div>
+      <h3 id="modalTitle">Course</h3>
+      <button class="modal-close" type="button" aria-label="Close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p class="m-desc" id="modalDesc"></p>
+      <div class="m-stats">
+        <div class="m-stat grant">
+          <div class="k">Base grant</div>
+          <div class="v" id="modalGrant">$0</div>
+        </div>
+        <div class="m-stat">
+          <div class="k">Monthly payment</div>
+          <div class="v">$149<span style="font-size:.78rem;color:var(--muted);font-weight:600">/month</span></div>
+        </div>
+      </div>
+      <div class="m-note">Grant amounts are estimates. You may qualify if you have not taken the same or a similar course within the past two years.</div>
+      <div class="m-curriculum" id="modalCurriculum" hidden></div>
+      <div class="modal-actions">
+        <button class="m-use" type="button" id="modalUseBtn">Use This Course</button>
+        <button class="m-close2" type="button" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Sticky mobile CTA ============ -->
+<div class="mobile-cta" id="mobileCta">
+  <div class="mc-info">
+    <div class="a" id="mcAmount">$0</div>
+    <div class="b">Potential grant · From $149/month</div>
+  </div>
+  <button class="mc-btn" onclick="scrollToCheckout()">Check My Grant</button>
+</div>
+
+<script>
+/* ================= Course data ================= */
+const COURSES = {
+  "accounting": {
+    name: "Accounting",
+    monthlyPayment: 149,
+    baseGrant: 4000,
+    description: "Build practical skills in bookkeeping, financial records, payroll basics, and business accounting support.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course Outline</div>
+        <ul class="m-curriculum-list">
+          <li><strong>Module 1:</strong> Microsoft Office and Alpha-Numeric Typing</li>
+          <li><strong>Module 2:</strong> Financial Accounting (Service Related Company)</li>
+          <li><strong>Module 3:</strong> Financial Accounting (Merchandizing Company)</li>
+          <li><strong>Module 4:</strong> Cost/Management Accounting</li>
+          <li><strong>Module 5:</strong> Income Tax Return</li>
+          <li><strong>Module 6:</strong> In-house practicum simulation and computerized accounting, including full cycle accounting, Sage 50, and QuickBooks</li>
+          <li><strong>Module 7:</strong> Payroll Compliance Practitioner (PCP) requirements</li>
+          <li><strong>Module 8:</strong> Introduction to Accounting with East West transcript credit consideration</li>
+          <li><strong>Module 9:</strong> Payroll Compliance Legislation (PCL)</li>
+          <li><strong>Module 10:</strong> Payroll Fundamentals 1 (PF1)</li>
+          <li><strong>Module 11:</strong> Payroll Fundamentals 2 (PF2)</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Microsoft Office Curriculum</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks</p>
+        <p class="m-curriculum-copy"><strong>Required for:</strong> Office Administration, Accounting and Payroll, Medical Office Assistant, and Education Assistant.</p>
+        <ul class="m-curriculum-list">
+          <li>Chapter 1: MS Word</li>
+          <li>Chapter 2: MS Excel</li>
+          <li>Chapter 3: MS Access</li>
+          <li>Chapter 4: MS PowerPoint</li>
+          <li>Keyboarding practice targets at least 40 words per minute.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Assessment</div>
+        <div class="m-score-grid">
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Participation and attendance</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Keyboarding pre-assessment and post-assessment</div></div>
+          <div class="m-score-item"><div class="w">35%</div><div class="d">Four quizzes with 20 multiple choice questions from each program</div></div>
+          <div class="m-score-item"><div class="w">20%</div><div class="d">At least one assignment for each program</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">PowerPoint presentation on a course-related topic at the end of the MS Office course</div></div>
+        </div>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Textbook</div>
+        <p class="m-curriculum-copy">Chaney Adkins, Hains, Hawkinds and Murre Wolf. Skill of Success with Microsoft Office 2016. USA: Pearson, 2017. ISBN: 10-987-654321.</p>
+        <a class="m-file-link" href="Accounting-and-Payroll-Administration-Diploma-(MyGrantsCanada).pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  },
+  "business-administration": {
+    name: "Business Administration",
+    monthlyPayment: 149,
+    baseGrant: 4000,
+    description: "Develop business, communication, office, and administrative skills for a wide range of professional roles.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy">There are 14 modules in the 54-week Business Administration Diploma. This popup includes the first four modules from the curriculum outline.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">1. Business Communication</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks (80 hours)</p>
+        <p class="m-curriculum-copy">Covers written and verbal business communication in professional settings, including business writing, letters, memos, summaries, persuasive writing, and oral presentations.</p>
+        <p class="m-curriculum-copy"><strong>Textbook:</strong> <em>Look: Looking Out, Looking In</em> by Ronald B. Adler, Judith A. Rolls, and Russell F. Proctor.</p>
+        <ul class="m-curriculum-list">
+          <li>Effective business writing and professional communications</li>
+          <li>Research approaches and information collection</li>
+          <li>Presentation delivery and interpersonal communication skills</li>
+          <li>Team effectiveness, time management, and problem solving</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">2. Business Mathematics</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 2 weeks (40 hours)</p>
+        <p class="m-curriculum-copy">Reviews practical business math including ratios, percentages, proportions, marketing math, simple and compound interest, annuities, loans, and mortgages.</p>
+        <ul class="m-curriculum-list">
+          <li>Analyze and calculate interest, annuities, payroll preparation, pricing, invoice preparation, discounts, taxes, and depreciation</li>
+          <li>Use business math terminology and explain business math concepts in real-world situations</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">3. Income Taxes</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks (80 hours)</p>
+        <p class="m-curriculum-copy">Introduces the Income Tax Act and the taxation of salaries, business income, office and employment income, property, capital gains and losses, deductions, and the calculation of taxable income for individuals.</p>
+        <ul class="m-curriculum-list">
+          <li>Describe the Canadian income taxation system and administrative procedures</li>
+          <li>Explain employment income, capital cost allowance, and business versus net income</li>
+          <li>Discuss property income, capital gains, losses, and major income sources under the Income Tax Act</li>
+          <li>Calculate taxable income and taxes payable for an individual residing in Canada</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">4. Organizational Behavior</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks (80 hours)</p>
+        <p class="m-curriculum-copy">Explores organizational behavior and learning, motivation and reward systems, group dynamics, team building, decision making, conflict resolution, organizational change, and organizational structure and design.</p>
+        <p class="m-curriculum-copy"><strong>Textbook:</strong> <em>Organizational Behavior</em> by Nancy Langton and Stephen Robbins.</p>
+        <ul class="m-curriculum-list">
+          <li>Explain the development of organizational behavior from micro and macro perspectives</li>
+          <li>Compare models of individual behavior related to motivation and rewards</li>
+          <li>Identify communication and conflict-resolution processes used in organizations</li>
+          <li>Demonstrate group dynamics, team building, leadership, and decision-making concepts</li>
+          <li>Explain organizational culture, design dimensions, and the implementation of organizational change</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Business-Administration-Dimploma-pdf.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  },
+  "community-support-worker": {
+    name: "Community Support Worker",
+    monthlyPayment: 149,
+    baseGrant: 4000,
+    description: "Prepare for meaningful work supporting individuals, families, and communities through care-focused service skills.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Community Support Worker Diploma</strong></p>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> In-class 940 hours at 20 hours per week, plus 120 practicum hours at 30 hours per week.</p>
+        <p class="m-curriculum-copy"><strong>Total length:</strong> 53 weeks</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Core Curriculum</div>
+        <ul class="m-curriculum-list">
+          <li><strong>MS Office Applications - 80 hours:</strong> Word, Excel, and PowerPoint functions, file management, editing, formatting, printing, and general Windows application skills.</li>
+          <li><strong>Introduction to Human Services - 40 hours:</strong> Social programs, services, and effective social work practices within well-defined populations.</li>
+          <li><strong>Lifespan Development - 80 hours:</strong> Developmental changes in children and adolescents, including social, cultural, and environmental influences.</li>
+          <li><strong>Children and Youth at Risk - 80 hours:</strong> Foundational support strategies for children and youth facing specific social challenges.</li>
+          <li><strong>Understanding Addictions - 40 hours:</strong> Substance abuse, counselling, treatment settings, treatment planning, and continuum of care.</li>
+          <li><strong>Indigenous Studies - 40 hours:</strong> Knowledge and skills for supporting Indigenous individuals and families in schools and communities.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Counselling and Support Modules</div>
+        <ul class="m-curriculum-list">
+          <li><strong>Understanding Cultural and Social Differences - 40 hours:</strong> Multicultural counselling competencies and alternative holistic approaches for diverse groups in Canada.</li>
+          <li><strong>Rehabilitation and Care Planning - 80 hours:</strong> Lifespan development from prenatal to elderhood with emphasis on physical, intellectual, social, and emotional growth.</li>
+          <li><strong>Introduction to Pharmacology - 40 hours:</strong> Basic pharmacology related to mental health challenges and substance use.</li>
+          <li><strong>Introduction to Mental Health - 80 hours:</strong> Mental health conditions and supportive approaches for individuals living with mental health issues.</li>
+          <li><strong>Sociology and Family Systems Theory - 80 hours:</strong> Family counselling systems theory and major counselling models.</li>
+          <li><strong>Communication Skills for Counselling, Recording and Reporting - 40 hours:</strong> Personal and interpersonal communication skills for counselling settings.</li>
+          <li><strong>Counselling Theories - 40 hours:</strong> Historical, modern, and multicultural counselling theory foundations.</li>
+          <li><strong>Group Counselling - 40 hours:</strong> Group facilitation, participation strategies, and client interviewing techniques.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Wellness, Career, and Practicum</div>
+        <ul class="m-curriculum-list">
+          <li><strong>Gerontology and End of Life Care - 40 hours:</strong> Aging, psychosocial applications of growing older, and emotional and physical support at end of life.</li>
+          <li><strong>Self-Care and Mentoring of Life-skills - 80 hours:</strong> Stress reduction, wellness strategies, and support for clients' daily living independence.</li>
+          <li><strong>Resume Writing, Interview Preparation and Career Planning - 20 hours:</strong> Job search, interviewing, and career management strategies.</li>
+          <li><strong>Practicum - 120 hours:</strong> Applied field experience to support real-world readiness.</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Community-Support-Worker-Curriculum-pdf.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  },
+  "education-assistant": {
+    name: "Education Assistant",
+    monthlyPayment: 149,
+    baseGrant: 4000,
+    description: "Train to support teachers and students in classroom environments, including learning assistance and student support.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Education Assistant Curriculum</strong></p>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 54 weeks</p>
+        <p class="m-curriculum-copy">This diploma includes 19 modules for a total of 1,080 hours, including an on-the-job practicum.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Curriculum Modules</div>
+        <ul class="m-curriculum-list">
+          <li><strong>1. MS Office:</strong> 80 hours</li>
+          <li><strong>2. English for Academic Purpose:</strong> 80 hours</li>
+          <li><strong>3. Inclusive Education:</strong> 40 hours</li>
+          <li><strong>4. Education Assistant Roles and Responsibilities:</strong> 20 hours</li>
+          <li><strong>5. Communication Skills:</strong> 40 hours</li>
+          <li><strong>6. Portfolio Development:</strong> 40 hours</li>
+          <li><strong>7. Characteristics of Learners:</strong> 40 hours</li>
+          <li><strong>8. Therapeutic Crises Intervention (TCI):</strong> 40 hours</li>
+          <li><strong>9. Lifespan Development:</strong> 80 hours</li>
+          <li><strong>10. Observation and Documentation:</strong> 40 hours</li>
+          <li><strong>11. Positive Behaviour Supports:</strong> 80 hours</li>
+          <li><strong>12. Supportive Learning Environment:</strong> 40 hours</li>
+          <li><strong>13. Professionalism:</strong> 20 hours</li>
+          <li><strong>14. Instructional Technology:</strong> 40 hours</li>
+          <li><strong>15. Students with Exceptionalities 1&amp;2:</strong> 80 hours</li>
+          <li><strong>16. Introduction to Early Childhood Education:</strong> 80 hours</li>
+          <li><strong>17. Communication, Attitudes, Social and Life Skills:</strong> 40 hours</li>
+          <li><strong>18. Developing Through Play:</strong> 80 hours</li>
+          <li><strong>19. On Job Training (Practicum):</strong> 120 hours</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Education-Assistant-Diploma-Curriculum.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  },
+  "hospitality-business-management": {
+    name: "Hospitality Business Management",
+    monthlyPayment: 149,
+    baseGrant: 1000,
+    description: "Learn service, operations, guest relations, and business skills for hospitality and customer-focused environments.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Diploma in Hospitality Business Management</strong></p>
+        <p class="m-curriculum-copy"><strong>Total length:</strong> 54 weeks total, including 49 weeks in class and 5 weeks practicum.</p>
+        <p class="m-curriculum-copy"><strong>Total hours:</strong> 1,080 hours</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Courses</div>
+        <ul class="m-curriculum-list">
+          <li><strong>1. Introduction to Microsoft Office:</strong> 3 weeks, 60 hours</li>
+          <li><strong>2. Introduction to Hospitality Career and Employment:</strong> 2 weeks, 40 hours</li>
+          <li><strong>3. Introduction to Tourism:</strong> 2 weeks, 40 hours</li>
+          <li><strong>4. Canadian Hospitality Law:</strong> 2 weeks, 40 hours</li>
+          <li><strong>5. Food and Beverage Service:</strong> 1 week, 20 hours</li>
+          <li><strong>6. Hygiene and Food Safety / Occupational Health and Safety:</strong> 1 week, 20 hours</li>
+          <li><strong>7. Business Communication:</strong> 1 week, 20 hours</li>
+          <li><strong>8. Basic Hotel and Restaurant Accounting:</strong> 2 weeks, 40 hours</li>
+          <li><strong>9. Managing Front Office Operations:</strong> 6 weeks, 120 hours</li>
+          <li><strong>10. Managing Housekeeping Operations:</strong> 3 weeks, 60 hours</li>
+          <li><strong>11. Design and Management of Hospitality Facilities:</strong> 1 week, 20 hours</li>
+          <li><strong>12. Special Events and Convention Management I:</strong> 2 weeks, 40 hours</li>
+          <li><strong>13. Special Events and Convention Management II:</strong> 2 weeks, 40 hours</li>
+          <li><strong>14. Food, Beverage and Labor Cost Control:</strong> 4 weeks, 80 hours</li>
+          <li><strong>15. Human Resources Management for Hospitality Business:</strong> 2 weeks, 40 hours</li>
+          <li><strong>16. Sales and Marketing:</strong> 3 weeks, 60 hours</li>
+          <li><strong>17. Revenue Management:</strong> 6 weeks, 120 hours</li>
+          <li><strong>18. Security and Loss Prevention:</strong> 1 week, 20 hours</li>
+          <li><strong>19. Entrepreneurship:</strong> 2 weeks, 40 hours</li>
+          <li><strong>20. Organizational Behavior in Tourism and Hospitality Industry:</strong> 2 weeks, 40 hours</li>
+          <li><strong>21. CPR / First Aid and WHMIS:</strong> 1 week, 20 hours</li>
+          <li><strong>22. Practicum:</strong> 5 weeks, 100 hours</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Canadian Hospitality Law Topics</div>
+        <ul class="m-curriculum-list">
+          <li>Canadian law</li>
+          <li>Impact of legislation on the hospitality industry</li>
+          <li>Legal responsibilities in the hospitality industry</li>
+          <li>Contract law</li>
+          <li>Business structures</li>
+          <li>Insurance</li>
+          <li>Risk management</li>
+          <li>Human rights legislation</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Shared Microsoft Office Curriculum</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 4 weeks</p>
+        <p class="m-curriculum-copy"><strong>Course description:</strong> Covers the core features of Word, Excel, Access, and PowerPoint, plus Windows application skills, projects, assignments, and typing practice.</p>
+        <ul class="m-curriculum-list">
+          <li>Chapter 1: MS Word</li>
+          <li>Chapter 2: MS Excel</li>
+          <li>Chapter 3: MS Access</li>
+          <li>Chapter 4: MS PowerPoint</li>
+          <li>Keyboarding practice targets at least 40 words per minute</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Assessment and Textbook</div>
+        <div class="m-score-grid">
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Participation and attendance</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">Keyboarding pre-assessment and post-assessment</div></div>
+          <div class="m-score-item"><div class="w">35%</div><div class="d">Four quizzes with 20 multiple choice questions from each program</div></div>
+          <div class="m-score-item"><div class="w">20%</div><div class="d">At least one assignment for each program</div></div>
+          <div class="m-score-item"><div class="w">15%</div><div class="d">PowerPoint presentation on a course related topic at the end of the MS Office course</div></div>
+        </div>
+        <p class="m-curriculum-copy"><strong>Textbook:</strong> Chaney Adkins, Hains, Hawkinds and Murre Wolf. <em>Skill of Success with Microsoft Office 2016.</em> USA: Pearson, 2017. ISBN: 10-987-654321.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Hospitality-Business-Management-Diploma.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  },
+  "medical-office-assistant": {
+    name: "Medical Office Assistant",
+    monthlyPayment: 149,
+    baseGrant: 3000,
+    description: "Prepare for administrative roles in clinics, medical offices, and healthcare support settings.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Program Overview</div>
+        <p class="m-curriculum-copy"><strong>Medical Office Assistant Diploma Curriculum</strong></p>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 54 weeks</p>
+        <p class="m-curriculum-copy">This program includes 16 diploma modules that prepare students for medical office administration, clinical support, records, communication, and practicum readiness.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Diploma Modules</div>
+        <ul class="m-curriculum-list">
+          <li><strong>MOA001:</strong> Computer Applications Program</li>
+          <li><strong>MOA002:</strong> Basic Anatomy and Physiology</li>
+          <li><strong>MOA003:</strong> Medical Terminology - 1</li>
+          <li><strong>MOA004:</strong> Medical Terminology - 2</li>
+          <li><strong>MOA005:</strong> Medical Transcription</li>
+          <li><strong>MOA006:</strong> Standard Health and Safety in Health Care</li>
+          <li><strong>MOA007:</strong> Introduction to Human Relations</li>
+          <li><strong>MOA008:</strong> MOA’s Role in Canadian Health Care System</li>
+          <li><strong>MOA009:</strong> Medical Office Administration Skills</li>
+          <li><strong>MOA010:</strong> Medical Office Clinical Skills</li>
+          <li><strong>MOA011:</strong> Fundamentals of Unit Clerk</li>
+          <li><strong>MOA012:</strong> Communication Techniques and Scheduling</li>
+          <li><strong>MOA013:</strong> Electronic Medical Records (Practicing Health Care Software)</li>
+          <li><strong>MOA014:</strong> Standard First Aid &amp; CPR</li>
+          <li><strong>MOA015:</strong> Job Search, Resume Preparation, Interview Skills and Academic Review</li>
+          <li><strong>MOA016:</strong> Practicum (pre-requisite: completion of in-class and lab courses, First Aid &amp; CPR, and police clearance and immunization)</li>
+        </ul>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="Medical-Office-Assistant-Diploma.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  },
+  "office-administration": {
+    name: "Office Administration",
+    monthlyPayment: 149,
+    baseGrant: 3000,
+    description: "Gain practical office, computer, scheduling, communication, and administrative support skills."
+  },
+  "massage-therapy": {
+    name: "Massage Therapy",
+    monthlyPayment: 149,
+    baseGrant: 4000,
+    description: "A blended online and in-person program designed for students pursuing massage therapy training.",
+    curriculumHtml: `
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Year 1 Overview</div>
+        <p class="m-curriculum-copy"><strong>Massage Therapy - Year 1</strong></p>
+        <p class="m-curriculum-copy">This section highlights the Year 1 foundational courses in massage therapy, including hands-on practice, theory, sequencing, and anatomy.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 1: Introduction to Massage Therapy</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 40 hours</p>
+        <p class="m-curriculum-copy">Students learn basic manual massage applications for general relaxation, along with the physiological and psychological effects and benefits of massage therapy. The course also covers patient handling, table setup, draping techniques, palpation, tactile skill development, and the history and modernization of massage therapy.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 2: Massage Theory and Practice</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 60 hours</p>
+        <p class="m-curriculum-copy">Introduces students to the basic concepts of massage therapy and the medical terminology used in documentation and professional communication. Students also learn relevant layman’s terms, the advantages and limits of massage therapy, and apply critical thinking while using massage concepts.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 3: Principles and Sequence of Massage</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 40 hours</p>
+        <p class="m-curriculum-copy">Students learn how to synchronize rhythm and pressure in ways that are more relaxing and acceptable to the client while building the practical knowledge and skills needed for safe and effective massage sequencing.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Course 4: Anatomy and Physiology I</div>
+        <p class="m-curriculum-copy"><strong>Duration:</strong> 100 hours</p>
+        <p class="m-curriculum-copy">Provides an introduction to the human body with a brief overview of introductory chemistry, cellular biology, histology, and the fundamental principles of systemic anatomy and physiology as they relate to homeostasis. Students build a working knowledge of basic terminology, concepts, and the structure and function of the body.</p>
+      </div>
+      <div class="m-curriculum-block">
+        <div class="m-curriculum-title">Full Curriculum File</div>
+        <a class="m-file-link" href="MT-Curriculam.pdf" target="_blank" rel="noopener">Click file to view full curriculum</a>
+      </div>
+    `
+  }
+};
+
+const CHILD_REBATE = 3000;
+const MAX_CHILDREN = 10;
+
+/* ================= State ================= */
+const state = {
+  courseKey: "business-administration",
+  children: 0
+};
+
+const fmt = n => "$" + n.toLocaleString("en-CA");
+
+/* ================= Elements ================= */
+const courseSelect    = document.getElementById("courseSelect");
+const checkoutCourse  = document.getElementById("checkoutCourse");
+const checkoutChildren= document.getElementById("checkoutChildren");
+const childCountEl    = document.getElementById("childCount");
+const childMinus      = document.getElementById("childMinus");
+const childPlus       = document.getElementById("childPlus");
+const checkoutForm    = document.getElementById("checkoutForm");
+const formError       = document.getElementById("formError");
+const submitBtn       = checkoutForm.querySelector(".submit-btn");
+const thankYouScreen  = document.getElementById("thankYouScreen");
+
+/* ================= Build selects ================= */
+function buildSelects(){
+  const opts = Object.entries(COURSES)
+    .map(([k,c]) => `<option value="${k}">${c.name}</option>`).join("");
+  courseSelect.innerHTML = opts;
+  checkoutCourse.innerHTML = opts;
+  let chOpts = "";
+  for(let i=0;i<=MAX_CHILDREN;i++) chOpts += `<option value="${i}">${i}</option>`;
+  checkoutChildren.innerHTML = chOpts;
+}
+
+/* ================= Course cards ================= */
+function buildCourseCards(){
+  const grid = document.getElementById("coursesGrid");
+  grid.innerHTML = Object.entries(COURSES).map(([k,c]) => `
+    <div class="course-card reveal" data-key="${k}" id="card-${k}">
+      <div class="cc-top">
+        <span class="cc-grant">${fmt(c.baseGrant)}+ grant</span>
+        <span class="cc-selected-tag">Selected</span>
+      </div>
+      <h3>${c.name}</h3>
+      <p>${c.description}</p>
+      <div class="cc-meta">
+        <div class="m">Base grant<b>${fmt(c.baseGrant)}+</b></div>
+        <div class="m" style="text-align:right">Monthly payment<b>$${c.monthlyPayment}/month</b></div>
+      </div>
+      <button class="cc-btn" type="button" onclick="openModal('${k}')">View Details</button>
+    </div>
+  `).join("");
+}
+
+/* ================= Calculation + sync ================= */
+function calc(){
+  const c = COURSES[state.courseKey];
+  const childTotal = state.children * CHILD_REBATE;
+  return {
+    course: c,
+    base: c.baseGrant,
+    childTotal,
+    total: c.baseGrant + childTotal
+  };
+}
+
+let lastTotal = null;
+function render(){
+  const r = calc();
+
+  /* hero estimator */
+  document.getElementById("sumCourse").textContent = r.course.name;
+  document.getElementById("sumBase").textContent = fmt(r.base);
+  document.getElementById("sumChildLbl").textContent = `Child grant (${state.children} × $3,000)`;
+  document.getElementById("sumChild").textContent = fmt(r.childTotal);
+  const totalEl = document.getElementById("sumTotal");
+  totalEl.textContent = fmt(r.total);
+  document.getElementById("heroCtaAmount").textContent = fmt(r.total);
+  if(lastTotal !== null && lastTotal !== r.total){
+    totalEl.classList.remove("bump"); void totalEl.offsetWidth; totalEl.classList.add("bump");
+  }
+  lastTotal = r.total;
+
+  childCountEl.textContent = state.children;
+  childMinus.disabled = state.children <= 0;
+  childPlus.disabled  = state.children >= MAX_CHILDREN;
+
+  /* selects in sync */
+  if(courseSelect.value !== state.courseKey) courseSelect.value = state.courseKey;
+  if(checkoutCourse.value !== state.courseKey) checkoutCourse.value = state.courseKey;
+  if(checkoutChildren.value !== String(state.children)) checkoutChildren.value = String(state.children);
+
+  /* course cards highlight */
+  document.querySelectorAll(".course-card").forEach(card => {
+    card.classList.toggle("selected", card.dataset.key === state.courseKey);
+  });
+
+  /* checkout summary */
+  document.getElementById("csCourse").textContent = r.course.name;
+  document.getElementById("csBase").textContent = fmt(r.base);
+  document.getElementById("csChildLbl").textContent = `Child grant (${state.children} × $3,000)`;
+  document.getElementById("csChild").textContent = fmt(r.childTotal);
+  document.getElementById("csTotal").textContent = fmt(r.total);
+  document.getElementById("checkoutCtaAmount").textContent = fmt(r.total);
+
+  /* submission values */
+  document.getElementById("selectedCourseName").value = r.course.name;
+  document.getElementById("baseGrantAmount").value = fmt(r.base);
+  document.getElementById("childGrantAmount").value = fmt(r.childTotal);
+  document.getElementById("estimatedGrantAmount").value = fmt(r.total);
+  document.getElementById("thankYouCourse").textContent = r.course.name;
+  document.getElementById("thankYouAmount").textContent = fmt(r.total);
+
+  /* mobile cta */
+  document.getElementById("mcAmount").textContent = fmt(r.total);
+}
+
+function setCourse(key){
+  if(!COURSES[key]) return;
+  state.courseKey = key;
+  render();
+}
+function setChildren(n){
+  state.children = Math.min(MAX_CHILDREN, Math.max(0, n));
+  render();
+}
+
+/* ================= Events ================= */
+courseSelect.addEventListener("change", e => setCourse(e.target.value));
+checkoutCourse.addEventListener("change", e => setCourse(e.target.value));
+checkoutChildren.addEventListener("change", e => setChildren(parseInt(e.target.value,10) || 0));
+childMinus.addEventListener("click", () => setChildren(state.children - 1));
+childPlus.addEventListener("click", () => setChildren(state.children + 1));
+
+/* ================= Modal ================= */
+const overlay = document.getElementById("modalOverlay");
+const modalCurriculum = document.getElementById("modalCurriculum");
+let modalKey = null;
+
+function openModal(key){
+  const c = COURSES[key];
+  if(!c) return;
+  modalKey = key;
+  document.getElementById("modalTitle").textContent = c.name;
+  document.getElementById("modalDesc").textContent = c.description;
+  document.getElementById("modalGrant").textContent = fmt(c.baseGrant);
+  if(c.curriculumHtml){
+    modalCurriculum.innerHTML = c.curriculumHtml;
+    modalCurriculum.hidden = false;
+  } else {
+    modalCurriculum.innerHTML = "";
+    modalCurriculum.hidden = true;
+  }
+  overlay.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+function closeModal(){
+  overlay.classList.remove("show");
+  document.body.style.overflow = "";
+  modalCurriculum.innerHTML = "";
+  modalCurriculum.hidden = true;
+  modalKey = null;
+}
+overlay.addEventListener("click", e => { if(e.target === overlay) closeModal(); });
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+document.getElementById("modalUseBtn").addEventListener("click", () => {
+  if(modalKey) setCourse(modalKey);
+  closeModal();
+  document.getElementById("estimator").scrollIntoView({behavior:"smooth", block:"center"});
+});
+
+/* ================= Checkout form ================= */
+checkoutForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  if(!checkoutForm.checkValidity()){ checkoutForm.reportValidity(); return; }
+
+  const defaultButtonHtml = submitBtn.innerHTML;
+  formError.classList.remove("show");
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting...";
+
+  try{
+    const response = await fetch(checkoutForm.action, {
+      method: checkoutForm.method,
+      body: new FormData(checkoutForm),
+      headers: { "Accept": "application/json" }
+    });
+
+    if(!response.ok) throw new Error("Formspree submission failed");
+
+    checkoutForm.querySelectorAll("input, select").forEach(field => {
+      field.disabled = true;
+    });
+    checkoutForm.classList.add("submitted");
+    thankYouScreen.scrollIntoView({behavior:"smooth", block:"nearest"});
+  } catch(error){
+    formError.classList.add("show");
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = defaultButtonHtml;
+  }
+});
+
+function scrollToCheckout(){
+  document.getElementById("checkout").scrollIntoView({behavior:"smooth"});
+}
+
+/* ================= FAQ ================= */
+const FAQS = [
+  ["How much can I receive per child?",
+   "You may qualify for an additional $3,000 per child depending on eligibility and program details."],
+  ["Is the monthly payment really $149/month?",
+   "Financing may start from $149/month depending on approval and program details."],
+  ["Can I study from anywhere in Canada?",
+   "Yes, the program is designed for online study from anywhere in Canada, depending on the selected course."],
+  ["How much time do I need each week?",
+   "The program is designed around approximately 1 hour per day, 5 days per week."],
+  ["Is the grant guaranteed?",
+   "Eligibility may be available if you have not taken the same or a similar course within the past two years. Final grant details may depend on approval, program selection, and student information."]
+];
+
+function buildFaq(){
+  const list = document.getElementById("faqList");
+  list.innerHTML = FAQS.map((f,i) => `
+    <div class="faq-item reveal">
+      <button class="faq-q" type="button" aria-expanded="false">
+        <span>${f[0]}</span>
+        <span class="chev"><svg style="color:var(--charcoal)"><use href="#chev-d"/></svg></span>
+      </button>
+      <div class="faq-a"><p>${f[1]}</p></div>
+    </div>
+  `).join("");
+  list.querySelectorAll(".faq-item").forEach(item => {
+    const btn = item.querySelector(".faq-q");
+    const ans = item.querySelector(".faq-a");
+    btn.addEventListener("click", () => {
+      const open = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open);
+      ans.style.maxHeight = open ? ans.scrollHeight + "px" : "0";
+    });
+  });
+}
+
+/* ================= Scroll reveal ================= */
+function initReveal(){
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+}
+
+/* ================= Mobile sticky CTA visibility ================= */
+function initMobileCta(){
+  const cta = document.getElementById("mobileCta");
+  const hero = document.getElementById("estimator");
+  const checkout = document.getElementById("checkout");
+  const io = new IntersectionObserver(() => {
+    const heroGone = hero.getBoundingClientRect().bottom < 0;
+    const checkoutVisible = checkout.getBoundingClientRect().top < window.innerHeight * .7;
+    cta.classList.toggle("visible", heroGone && !checkoutVisible);
+  }, {threshold:[0, .2, .5, 1]});
+  io.observe(hero); io.observe(checkout);
+  window.addEventListener("scroll", () => {
+    const heroGone = hero.getBoundingClientRect().bottom < 0;
+    const checkoutVisible = checkout.getBoundingClientRect().top < window.innerHeight * .7;
+    cta.classList.toggle("visible", heroGone && !checkoutVisible);
+  }, {passive:true});
+}
+
+/* ================= Init ================= */
+buildSelects();
+buildCourseCards();
+buildFaq();
+setCourse("business-administration");
+setChildren(0);
+initReveal();
+initMobileCta();
+</script>
+</body>
+</html>
