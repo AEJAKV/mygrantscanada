@@ -250,6 +250,30 @@ input,select{font-family:inherit}
 .float-chip.c2{bottom:16%;right:2%;animation-delay:1.4s}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
+/* ---------- Roxy agent card (mobile only) ---------- */
+.roxy-card{
+  display:none;
+  align-items:center;gap:12px;
+  background:#fff;border:1.5px solid var(--gold);
+  border-radius:18px;box-shadow:var(--shadow-card);
+  padding:12px 14px;margin:0 auto 4px;max-width:440px;text-align:left;
+}
+.roxy-card img{
+  width:52px;height:52px;border-radius:50%;flex:none;
+  object-fit:cover;border:2px solid var(--border);
+}
+.roxy-card-info{flex:1;min-width:0}
+.roxy-card-name{font-size:1.05rem;font-weight:800;color:var(--charcoal);letter-spacing:-.01em;line-height:1.2}
+.roxy-card-role{font-size:.8rem;color:var(--muted);font-weight:600;white-space:nowrap}
+.roxy-card-cta{
+  flex:none;display:inline-flex;align-items:center;gap:5px;
+  background:rgba(244,183,64,.18);color:#9a6c08;border:1.5px solid var(--gold);
+  font-size:.85rem;font-weight:800;padding:9px 13px;border-radius:999px;
+  transition:transform .15s ease, background .15s ease;
+}
+.roxy-card-cta:hover{background:rgba(244,183,64,.3);transform:translateY(-1px)}
+.roxy-card-cta svg{width:14px;height:14px}
+
 /* ---------- Stats bar ---------- */
 .stats{margin-top:-18px;position:relative;z-index:5}
 .stats-grid{
@@ -544,6 +568,7 @@ section{padding:72px 0 0}
   .elig-ico{margin:0 auto}
   .hero-shell{padding:44px 18px 0;border-radius:22px}
   .mobile-cta{display:flex}
+  .roxy-card{display:flex}
   section{padding:56px 0 0}
   body{padding-bottom:74px}
 }
@@ -628,6 +653,19 @@ section{padding:72px 0 0}
         </div>
         <h1>Get Up to <span class="gold">$15,000 Support Funds Sent Fast!</span></h1>
         <p class="hero-sub">Student Grants and Education Bundled in one!</p>
+      </div>
+
+      <!-- Roxy agent card (mobile only) -->
+      <div class="roxy-card">
+        <img src="/roxy/img/Roxy-image.jpeg" alt="Roxy, Grant Support Agent"
+             onerror="this.onerror=null;this.style.display='none'">
+        <div class="roxy-card-info">
+          <div class="roxy-card-name">Roxy</div>
+          <div class="roxy-card-role">Grant Support Agent</div>
+        </div>
+        <button class="roxy-card-cta" type="button" onclick="scrollToCheckout()">
+          Ask Roxy <svg><use href="#arrow-r"/></svg>
+        </button>
       </div>
 
       <div class="hero-grid">
